@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<!-- DataTables CSS -->
+		<link rel="stylesheet" type="text/css" href="results_fichiers/jquery.css">
+		<link rel="stylesheet" type="text/css" href="results_fichiers/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="results_fichiers/dataTables.css">
+		<link rel="stylesheet" type="text/css" href="results_fichiers/jquery.css">
+
+    
+		<!-- JavaScript -->
+		<script type="text/javascript" charset="utf8" src="results_fichiers/jquery-1.js"></script>
+		<script type="text/javascript" charset="utf8" src="results_fichiers/jquery_002.js"></script>
+		<script type="text/javascript" charset="utf8" src="results_fichiers/jquery.js"></script>
+		<script type="text/javascript" charset="utf8" src="results_fichiers/dataTables.js"></script>
+		<script type="text/javascript" charset="utf8">
+			$(document).ready( function () {
+				$('#table_id').DataTable( {
+					'scrollX': true
+				} );
+			} );
+		</script>
+	</head>
+	<body>
+		<div id="table_id_wrapper" class="dataTables_wrapper dt-jqueryui no-footer"><div class="fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"><div class="dataTables_length" id="table_id_length"><label>Show <select name="table_id_length" aria-controls="table_id" class=""><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div><div id="table_id_filter" class="dataTables_filter"><label>Search:<input class="" placeholder="" aria-controls="table_id" type="search"></label></div></div><div class="dataTables_scroll"><div class="dataTables_scrollHead ui-state-default" style="overflow: hidden; position: relative; border: 0px none; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 5477px; padding-right: 0px;"><table class="display dataTable no-footer" style="text-align: center; margin-left: 0px; width: 5477px;" role="grid" cellspacing="0"><thead>
+  				<tr role="row"><th class="sorting ui-state-default sorting_asc" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 94.2px;" aria-sort="ascending" aria-label="Gene Symbol: activate to sort column descending"><div class="DataTables_sort_wrapper">Gene Symbol<span class="DataTables_sort_icon css_right ui-icon ui-icon-triangle-1-n"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 82.2px;" aria-label="Official full name: activate to sort column ascending"><div class="DataTables_sort_wrapper">Official full name<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 50.2px;" aria-label="N° accès NCBI: activate to sort column ascending"><div class="DataTables_sort_wrapper">N° accès NCBI<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 147.2px;" aria-label="N° accès EnsEMBL: activate to sort column ascending"><div class="DataTables_sort_wrapper">N° accès EnsEMBL<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 183.2px;" aria-label="Nom de la protéine: activate to sort column ascending"><div class="DataTables_sort_wrapper">Nom de la protéine<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 87.2px;" aria-label="N° accès protéine UniprotKB: activate to sort column ascending"><div class="DataTables_sort_wrapper">N° accès protéine UniprotKB<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 183.2px;" aria-label="N° accès protéine RefSeq: activate to sort column ascending"><div class="DataTables_sort_wrapper">N° accès protéine RefSeq<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 233.2px;" aria-label="N° accès protéine EnsEMBL: activate to sort column ascending"><div class="DataTables_sort_wrapper">N° accès protéine EnsEMBL<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 183.2px;" aria-label="N° accés ARNm RefSeq: activate to sort column ascending"><div class="DataTables_sort_wrapper">N° accés ARNm RefSeq<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 233.2px;" aria-label="N° accés ARNm EnsEMBL: activate to sort column ascending"><div class="DataTables_sort_wrapper">N° accés ARNm EnsEMBL<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 163.2px;" aria-label="Signatures fonctionnelles (Pfam): activate to sort column ascending"><div class="DataTables_sort_wrapper">Signatures fonctionnelles (Pfam)<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 163.2px;" aria-label="Signatures fonctionnelles (Prosite): activate to sort column ascending"><div class="DataTables_sort_wrapper">Signatures fonctionnelles (Prosite)<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 583.2px;" aria-label="Structure de la protéine PDB: activate to sort column ascending"><div class="DataTables_sort_wrapper">Structure de la protéine PDB<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 733.2px;" aria-label="GO Processus Biologiques: activate to sort column ascending"><div class="DataTables_sort_wrapper">GO Processus Biologiques<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 683.2px;" aria-label="GO Composants cellulaires: activate to sort column ascending"><div class="DataTables_sort_wrapper">GO Composants cellulaires<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 683.2px;" aria-label="GO Fonction moléculaire: activate to sort column ascending"><div class="DataTables_sort_wrapper">GO Fonction moléculaire<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 233.2px;" aria-label="Voies métaboliques (Kegg): activate to sort column ascending"><div class="DataTables_sort_wrapper">Voies métaboliques (Kegg)<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th><th class="sorting ui-state-default" tabindex="0" aria-controls="table_id" rowspan="1" colspan="1" style="width: 94.4px;" aria-label="Orthologues: activate to sort column ascending"><div class="DataTables_sort_wrapper">Orthologues<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></th></tr>
+  		 	 </thead></table></div></div><div class="dataTables_scrollBody" style="overflow: auto; width: 100%;"><table id="table_id" class="display dataTable no-footer" style="text-align: center; width: 5477px;" role="grid" aria-describedby="table_id_info" cellspacing="0"><thead>
+  				<tr role="row" style="height: 0px;"><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 94.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">Gene Symbol<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 82.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">Official full name<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 50.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">N° accès NCBI<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 147.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">N° accès EnsEMBL<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 183.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">Nom de la protéine<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 87.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">N° accès protéine UniprotKB<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 183.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">N° accès protéine RefSeq<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 233.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">N° accès protéine EnsEMBL<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 183.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">N° accés ARNm RefSeq<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 233.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">N° accés ARNm EnsEMBL<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 163.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">Signatures fonctionnelles (Pfam)<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 163.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">Signatures fonctionnelles (Prosite)<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 583.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">Structure de la protéine PDB<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 733.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">GO Processus Biologiques<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 683.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">GO Composants cellulaires<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 683.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">GO Fonction moléculaire<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 233.2px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">Voies métaboliques (Kegg)<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th><th class="ui-state-default sorting" aria-controls="table_id" rowspan="1" colspan="1" style="width: 94.4px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height:0;overflow:hidden;"><div class="DataTables_sort_wrapper">Orthologues<span class="DataTables_sort_icon css_right ui-icon ui-icon-carat-2-n-s"></span></div></div></th></tr>
+  		 	 </thead>
+  		 	 
+	<tbody>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<tr role="row" class="odd">	<td class="sorting_1"><b>BRCA1_human</b></td>		<!--Gene Symbol-->
+
+		<td>BRCA1, DNA repair associated</td>		<!--Official Full Name-->
+
+		<td><a href="https://www.ncbi.nlm.nih.gov/gene/?term=672">672</a></td>		<!--Gene ID-->
+
+		<td><a href="http://www.ensembl.org/human/Gene/Summary?db=core;g=ENSG00000012048">ENSG00000012048</a><br>		<!--ensEMBL Gene-->
+	
+		    <a href="http://www.ensembl.org/human/Location/View?db=core;g=ENSG00000012048">Genome Browser</a></td>		<!--Genome browser-->
+
+		<td><div style="width: 200px;">Breast cancer type 1 susceptibility protein</div></td>		<!--Protein Names UniProt-->
+
+		<td><a href="http://www.uniprot.org/uniprot/P38398">P38398</a></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;">		<!--num UniProt-->
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_009225.1">NP_009225.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_009228.2">NP_009228.2</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_009229.2">NP_009229.2</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_009230.2">NP_009230.2</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_009231.2">NP_009231.2</a>		<!--num Prot RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000350283">ENSP00000350283</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000312236">ENSP00000312236</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000417148">ENSP00000417148</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000465818">ENSP00000465818</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000467329">ENSP00000467329</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000465347">ENSP00000465347</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000418775">ENSP00000418775</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000418960">ENSP00000418960</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000418548">ENSP00000418548</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000420705">ENSP00000420705</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000419481">ENSP00000419481</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000420412">ENSP00000420412</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000418819">ENSP00000418819</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000418212">ENSP00000418212</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000417241">ENSP00000417241</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000326002">ENSP00000326002</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000489431">ENSP00000489431</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000397145">ENSP00000397145</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000419274">ENSP00000419274</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000419988">ENSP00000419988</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000420253">ENSP00000420253</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000418986">ENSP00000418986</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000419103">ENSP00000419103</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000420201">ENSP00000420201</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000417554">ENSP00000417554</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000417988">ENSP00000417988</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000420781">ENSP00000420781</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENSP00000478114">ENSP00000478114</a>	<!--num Prot ensEMBL--><br>
+</div></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;"><a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_007294.3">NM_007294.3</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_007297.3">NM_007297.3</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_007298.3">NM_007298.3</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_007299.3">NM_007299.3</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_007300.3">NM_007300.3</a>		<!--num ARNm RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000357654">ENST00000357654</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000352993">ENST00000352993</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000468300">ENST00000468300</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000586385">ENST00000586385</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000591534">ENST00000591534</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000591849">ENST00000591849</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000493795">ENST00000493795</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000471181">ENST00000471181</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000461221">ENST00000461221</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000491747">ENST00000491747</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000484087">ENST00000484087</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000478531">ENST00000478531</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000493919">ENST00000493919</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000472490">ENST00000472490</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000621897">ENST00000621897</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000487825">ENST00000487825</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000461574">ENST00000461574</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000497954">ENST00000497954</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000354071">ENST00000354071</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000634433">ENST00000634433</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000412061">ENST00000412061</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000470026">ENST00000470026</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000477152">ENST00000477152</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000492859">ENST00000492859</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000497488">ENST00000497488</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000494123">ENST00000494123</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000473961">ENST00000473961</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000476777">ENST00000476777</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000461798">ENST00000461798</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000489037">ENST00000489037</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000618469">ENST00000618469</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000460115">ENST00000460115</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000356906">ENST00000356906</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000467245">ENST00000467245</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000587322">ENST00000587322</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000464237">ENST00000464237</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000635600">ENST00000635600</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000590740">ENST00000590740</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000634503">ENST00000634503</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000634994">ENST00000634994</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000589464">ENST00000589464</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000012048;p=ENST00000589047">ENST00000589047</a>		<!--num ARNm ensEMBL--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://pfam.xfam.org/protein/BRCA1_human">PF00097</a>		<!--Pfam Id--><br>
+<a href="http://pfam.xfam.org/protein/BRCA1_human">PF00533</a>		<!--Pfam Id--><br>
+<a href="http://pfam.xfam.org/protein/BRCA1_human">PF12820</a>		<!--Pfam Id--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS50089">PS50089</a>		<!--Prosite Id--><br>
+<a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS00518">PS00518</a>		<!--Prosite Id--><br>
+<a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS50172">PS50172</a>		<!--Prosite Id--><br>
+</div></td><td><div style="width: 600px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1JM7">Solution structure of the BRCA1/BARD1 RING-domain heterodimer (Id: 1JM7)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1JNX">Crystal structure of the BRCT repeat region from the breast cancer associated protein, BRCA1 (Id: 1JNX)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1N5O">Structural consequences of a cancer-causing BRCA1-BRCT missense mutation (Id: 1N5O)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1OQA">Solution structure of the BRCT-c domain from human BRCA1 (Id: 1OQA)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1T15">Crystal Structure of the Brca1 BRCT Domains in Complex with the Phosphorylated Interacting Region from Bach1 Helicase (Id: 1T15)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1T29">Crystal structure of the BRCA1 BRCT repeats bound to a phosphorylated BACH1 peptide (Id: 1T29)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1T2U">Structural
+ basis of phosphopeptide recognition by the BRCT domain of BRCA1: 
+structure of BRCA1 missense variant V1809F (Id: 1T2U)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1T2V">Structural basis of phospho-peptide recognition by the BRCT domain of BRCA1, structure with phosphopeptide (Id: 1T2V)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1Y98">Structure of the BRCT repeats of BRCA1 bound to a CtIP phosphopeptide. (Id: 1Y98)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=2ING">X-ray Structure of the BRCA1 BRCT mutant M1775K (Id: 2ING)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=3COJ">Crystal
+ Structure of the BRCT Domains of Human BRCA1 in Complex with a 
+Phosphorylated Peptide from Human Acetyl-CoA Carboxylase 1 (Id: 3COJ)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=3K0H">The crystal structure of BRCA1 BRCT in complex with a minimal recognition tetrapeptide with an amidated C-terminus (Id: 3K0H)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=3K0K">Crystal Structure of BRCA1 BRCT in complex with a minimal recognition tetrapeptide with a free carboxy C-terminus. (Id: 3K0K)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=3K15">Crystal Structure of BRCA1 BRCT D1840T in complex with a minimal recognition tetrapeptide with an amidated C-terminus (Id: 3K15)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=3K16">Crystal
+ Structure of BRCA1 BRCT D1840T in complex with a minimal recognition 
+tetrapeptide with a free carboxy C-terminus (Id: 3K16)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=3PXA">Impact of BRCA1 BRCT domain missense substitutions on phospho-peptide recognition: G1656D (Id: 3PXA)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=3PXB">Impact of BRCA1 BRCT domain missense substitutions on phospho-peptide recognition: T1700A (Id: 3PXB)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=3PXC">Impact of BRCA1 BRCT domain missense substitutions on phospho-peptide recognition: R1699Q (Id: 3PXC)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=3PXD">Impact of BRCA1 BRCT domain missense substitutions on phospho-peptide recognition: R1835P (Id: 3PXD)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=3PXE">Impact of BRCA1 BRCT domain missense substitutions on phospho-peptide recognition: E1836K (Id: 3PXE)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=4IFI">Structure of human BRCA1 BRCT in complex with BAAT peptide (Id: 4IFI)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=4IGK">Structure of human BRCA1 BRCT in complex with ATRIP peptide (Id: 4IGK)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=4JLU">Crystal structure of BRCA1 BRCT with doubly phosphorylated Abraxas (Id: 4JLU)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=4OFB">Crystal structure of human BRCA1 BRCT in complex with nonphosphopeptide inhibitor (Id: 4OFB)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=4U4A">Complex Structure of BRCA1 BRCT with singly phospho Abraxas (Id: 4U4A)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=4Y18">Structure of BRCA1 BRCT domains in complex with Abraxas double phosphorylated peptide (Id: 4Y18)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=4Y2G">Structure of BRCA1 BRCT domains in complex with Abraxas single phosphorylated peptide (Id: 4Y2G)</a>		<!--PDB structure--><br>
+</div></td><td><div style="width: 750px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0000724">GO:0000724 : double-strand break repair via homologous recombination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000729">GO:0000729 : DNA double-strand break processing</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000731">GO:0000731 : DNA synthesis involved in DNA repair</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000732">GO:0000732 : strand displacement</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006260">GO:0006260 : DNA replication</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006281">GO:0006281 : DNA repair</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006301">GO:0006301 : postreplication repair</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006302">GO:0006302 : double-strand break repair</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006303">GO:0006303 : double-strand break repair via nonhomologous end joining</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006310">GO:0006310 : DNA recombination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006349">GO:0006349 : regulation of gene expression by genetic imprinting</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006351">GO:0006351 : transcription, DNA-templated</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006355">GO:0006355 : regulation of transcription, DNA-templated</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006357">GO:0006357 : regulation of transcription from RNA polymerase II promoter</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006359">GO:0006359 : regulation of transcription from RNA polymerase III promoter</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006629">GO:0006629 : lipid metabolic process</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006631">GO:0006631 : fatty acid metabolic process</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006633">GO:0006633 : fatty acid biosynthetic process</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006915">GO:0006915 : apoptotic process</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006974">GO:0006974 : cellular response to DNA damage stimulus</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006978">GO:0006978 : DNA damage response, signal transduction by p53 class mediator resulting in transcription of p21 class mediator</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007049">GO:0007049 : cell cycle</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007059">GO:0007059 : chromosome segregation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007098">GO:0007098 : centrosome cycle</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007420">GO:0007420 : brain development</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007584">GO:0007584 : response to nutrient</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0008630">GO:0008630 : intrinsic apoptotic signaling pathway in response to DNA damage</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0009048">GO:0009048 : dosage compensation by inactivation of X chromosome</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0010033">GO:0010033 : response to organic substance</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0010212">GO:0010212 : response to ionizing radiation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0010575">GO:0010575 : positive regulation of vascular endothelial growth factor production</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0010628">GO:0010628 : positive regulation of gene expression</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0016567">GO:0016567 : protein ubiquitination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0016925">GO:0016925 : protein sumoylation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030521">GO:0030521 : androgen receptor signaling pathway</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0031052">GO:0031052 : chromosome breakage</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0031398">GO:0031398 : positive regulation of protein ubiquitination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0031572">GO:0031572 : G2 DNA damage checkpoint</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0032355">GO:0032355 : response to estradiol</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0033147">GO:0033147 : negative regulation of intracellular estrogen receptor signaling pathway</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0033160">GO:0033160 : positive regulation of protein import into nucleus, translocation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0033993">GO:0033993 : response to lipid</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0035066">GO:0035066 : positive regulation of histone acetylation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0035067">GO:0035067 : negative regulation of histone acetylation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0042127">GO:0042127 : regulation of cell proliferation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0042981">GO:0042981 : regulation of apoptotic process</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0043009">GO:0043009 : chordate embryonic development</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0043627">GO:0043627 : response to estrogen</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0044030">GO:0044030 : regulation of DNA methylation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0045717">GO:0045717 : negative regulation of fatty acid biosynthetic process</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0045739">GO:0045739 : positive regulation of DNA repair</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0045766">GO:0045766 : positive regulation of angiogenesis</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0045892">GO:0045892 : negative regulation of transcription, DNA-templated</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0045893">GO:0045893 : positive regulation of transcription, DNA-templated</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0045944">GO:0045944 : positive regulation of transcription from RNA polymerase II promoter</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0046600">GO:0046600 : negative regulation of centriole replication</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0051571">GO:0051571 : positive regulation of histone H3-K4 methylation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0051572">GO:0051572 : negative regulation of histone H3-K4 methylation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0051573">GO:0051573 : negative regulation of histone H3-K9 methylation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0051574">GO:0051574 : positive regulation of histone H3-K9 methylation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0051865">GO:0051865 : protein autoubiquitination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0070512">GO:0070512 : positive regulation of histone H4-K20 methylation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0071158">GO:0071158 : positive regulation of cell cycle arrest</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0071356">GO:0071356 : cellular response to tumor necrosis factor</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0071681">GO:0071681 : cellular response to indole-3-methanol</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0085020">GO:0085020 : protein K6-linked ubiquitination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:1901796">GO:1901796 : regulation of signal transduction by p53 class mediator</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:1902042">GO:1902042 : negative regulation of extrinsic apoptotic signaling pathway via death domain receptors</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:2000378">GO:2000378 : negative regulation of reactive oxygen species metabolic process</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:2000617">GO:2000617 : positive regulation of histone H3-K9 acetylation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:2000620">GO:2000620 : positive regulation of histone H4-K16 acetylation</a>		<!--GO bio process--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0000151">GO:0000151 : ubiquitin ligase complex</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000793">GO:0000793 : condensed chromosome</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000794">GO:0000794 : condensed nuclear chromosome</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005634">GO:0005634 : nucleus</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005654">GO:0005654 : nucleoplasm</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005694">GO:0005694 : chromosome</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005737">GO:0005737 : cytoplasm</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005759">GO:0005759 : mitochondrial matrix</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005886">GO:0005886 : plasma membrane</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0008274">GO:0008274 : gamma-tubulin ring complex</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030529">GO:0030529 : intracellular ribonucleoprotein complex</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0031436">GO:0031436 : BRCA1-BARD1 complex</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0043234">GO:0043234 : protein complex</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0070531">GO:0070531 : BRCA1-A complex</a>		<!--GO Composé cell--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0003677">GO:0003677 : DNA binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0003682">GO:0003682 : chromatin binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0003684">GO:0003684 : damaged DNA binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0003713">GO:0003713 : transcription coactivator activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0003723">GO:0003723 : RNA binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0004842">GO:0004842 : ubiquitin-protein transferase activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005515">GO:0005515 : protein binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0008270">GO:0008270 : zinc ion binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0015631">GO:0015631 : tubulin binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0016874">GO:0016874 : ligase activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0019899">GO:0019899 : enzyme binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0031625">GO:0031625 : ubiquitin protein ligase binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0044212">GO:0044212 : transcription regulatory region DNA binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0046872">GO:0046872 : metal ion binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0050681">GO:0050681 : androgen receptor binding</a>		<!--GO fonction--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa01524">hsa:672	path:hsa01524</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa03440">hsa:672	path:hsa03440</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa03460">hsa:672	path:hsa03460</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04120">hsa:672	path:hsa04120</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04151">hsa:672	path:hsa04151</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05206">hsa:672	path:hsa05206</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05224">hsa:672	path:hsa05224</a>		<!--Kegg Id--><br>
+</div></td><td><a href="http://www.ensembl.org/human/Gene/Compara_Ortholog?db=core;g=ENSG00000012048">Liste des orthologues</a></td>		<!--Liste des orthologues-->	</tr><tr role="row" class="even">	<td class="sorting_1"><b>BRCA2_human</b></td>		<!--Gene Symbol-->
+
+		<td>BRCA2, DNA repair associated</td>		<!--Official Full Name-->
+
+		<td><a href="https://www.ncbi.nlm.nih.gov/gene/?term=675">675</a></td>		<!--Gene ID-->
+
+		<td><a href="http://www.ensembl.org/human/Gene/Summary?db=core;g=ENSG00000139618">ENSG00000139618</a><br>		<!--ensEMBL Gene-->
+	
+		    <a href="http://www.ensembl.org/human/Location/View?db=core;g=ENSG00000139618">Genome Browser</a></td>		<!--Genome browser-->
+
+		<td><div style="width: 200px;">Breast cancer type 2 susceptibility protein</div></td>		<!--Protein Names UniProt-->
+
+		<td><a href="http://www.uniprot.org/uniprot/P51587">P51587</a></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;">		<!--num UniProt-->
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_000050.2">NP_000050.2</a>		<!--num Prot RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000139618;p=ENSP00000369497">ENSP00000369497</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000139618;p=ENSP00000439902">ENSP00000439902</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000139618;p=ENSP00000433168">ENSP00000433168</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000139618;p=ENSP00000434898">ENSP00000434898</a>	<!--num Prot ensEMBL--><br>
+</div></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;"><a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_000059.3">NM_000059.3</a>		<!--num ARNm RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000139618;p=ENST00000380152">ENST00000380152</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000139618;p=ENST00000544455">ENST00000544455</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000139618;p=ENST00000530893">ENST00000530893</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000139618;p=ENST00000614259">ENST00000614259</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000139618;p=ENST00000528762">ENST00000528762</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000139618;p=ENST00000470094">ENST00000470094</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000139618;p=ENST00000400497">ENST00000400497</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000139618;p=ENST00000533776">ENST00000533776</a>		<!--num ARNm ensEMBL--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://pfam.xfam.org/protein/BRCA2_human">PF00634</a>		<!--Pfam Id--><br>
+<a href="http://pfam.xfam.org/protein/BRCA2_human">PF09103</a>		<!--Pfam Id--><br>
+<a href="http://pfam.xfam.org/protein/BRCA2_human">PF09104</a>		<!--Pfam Id--><br>
+<a href="http://pfam.xfam.org/protein/BRCA2_human">PF09121</a>		<!--Pfam Id--><br>
+<a href="http://pfam.xfam.org/protein/BRCA2_human">PF09169</a>		<!--Pfam Id--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS50138">PS50138</a>		<!--Prosite Id--><br>
+</div></td><td><div style="width: 600px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1N0W:23EU7:2">Crystal structure of a RAD51-BRCA2 BRC repeat complex (Id: 1N0W:2
+3EU7:2
+
+)</a>		<!--PDB structure--><br>
+</div></td><td><div style="width: 750px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0000722">GO:0000722 : telomere maintenance via recombination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000724">GO:0000724 : double-strand break repair via homologous recombination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000731">GO:0000731 : DNA synthesis involved in DNA repair</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000732">GO:0000732 : strand displacement</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000910">GO:0000910 : cytokinesis</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0001556">GO:0001556 : oocyte maturation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0001833">GO:0001833 : inner cell mass cell proliferation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006281">GO:0006281 : DNA repair</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006289">GO:0006289 : nucleotide-excision repair</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006302">GO:0006302 : double-strand break repair</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006310">GO:0006310 : DNA recombination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006974">GO:0006974 : cellular response to DNA damage stimulus</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006978">GO:0006978 : DNA damage response, signal transduction by p53 class mediator resulting in transcription of p21 class mediator</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007049">GO:0007049 : cell cycle</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007141">GO:0007141 : male meiosis I</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007283">GO:0007283 : spermatogenesis</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007420">GO:0007420 : brain development</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007569">GO:0007569 : cell aging</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007584">GO:0007584 : response to nutrient</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0008283">GO:0008283 : cell proliferation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0008585">GO:0008585 : female gonad development</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0008630">GO:0008630 : intrinsic apoptotic signaling pathway in response to DNA damage</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0010165">GO:0010165 : response to X-ray</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0010225">GO:0010225 : response to UV-C</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0010332">GO:0010332 : response to gamma radiation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030097">GO:0030097 : hemopoiesis</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030879">GO:0030879 : mammary gland development</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0031052">GO:0031052 : chromosome breakage</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0031619">GO:0031619 : homologous chromosome orientation involved in meiotic metaphase I plate congression</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0032355">GO:0032355 : response to estradiol</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0032465">GO:0032465 : regulation of cytokinesis</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0033600">GO:0033600 : negative regulation of mammary gland epithelial cell proliferation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0035264">GO:0035264 : multicellular organism growth</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0042771">GO:0042771 : intrinsic apoptotic signaling pathway in response to DNA damage by p53 class mediator</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0043009">GO:0043009 : chordate embryonic development</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0043966">GO:0043966 : histone H3 acetylation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0043967">GO:0043967 : histone H4 acetylation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0045893">GO:0045893 : positive regulation of transcription, DNA-templated</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0045931">GO:0045931 : positive regulation of mitotic cell cycle</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0048478">GO:0048478 : replication fork protection</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0051276">GO:0051276 : chromosome organization</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0051298">GO:0051298 : centrosome duplication</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0070200">GO:0070200 : establishment of protein localization to telomere</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:1990426">GO:1990426 : mitotic recombination-dependent replication fork processing</a>		<!--GO bio process--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0000784">GO:0000784 : nuclear chromosome, telomeric region</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005634">GO:0005634 : nucleus</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005654">GO:0005654 : nucleoplasm</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005737">GO:0005737 : cytoplasm</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005813">GO:0005813 : centrosome</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005815">GO:0005815 : microtubule organizing center</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005856">GO:0005856 : cytoskeleton</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030141">GO:0030141 : secretory granule</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0033593">GO:0033593 : BRCA2-MAGE-D1 complex</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0043234">GO:0043234 : protein complex</a>		<!--GO Composé cell--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0002020">GO:0002020 : protease binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0003677">GO:0003677 : DNA binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0003697">GO:0003697 : single-stranded DNA binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0004402">GO:0004402 : histone acetyltransferase activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005515">GO:0005515 : protein binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0010484">GO:0010484 : H3 histone acetyltransferase activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0010485">GO:0010485 : H4 histone acetyltransferase activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0043015">GO:0043015 : gamma-tubulin binding</a>		<!--GO fonction--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa03440">hsa:675	path:hsa03440</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa03460">hsa:675	path:hsa03460</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05200">hsa:675	path:hsa05200</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05212">hsa:675	path:hsa05212</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05224">hsa:675	path:hsa05224</a>		<!--Kegg Id--><br>
+</div></td><td><a href="http://www.ensembl.org/human/Gene/Compara_Ortholog?db=core;g=ENSG00000139618">Liste des orthologues</a></td>		<!--Liste des orthologues-->	</tr><tr role="row" class="odd">	<td class="sorting_1"><b>CFTR_human</b></td>		<!--Gene Symbol-->
+
+		<td>cystic fibrosis transmembrane conductance regulator</td>		<!--Official Full Name-->
+
+		<td><a href="https://www.ncbi.nlm.nih.gov/gene/?term=1080">1080</a></td>		<!--Gene ID-->
+
+		<td><a href="http://www.ensembl.org/human/Gene/Summary?db=core;g=ENSG00000001626">ENSG00000001626</a><br>		<!--ensEMBL Gene-->
+	
+		    <a href="http://www.ensembl.org/human/Location/View?db=core;g=ENSG00000001626">Genome Browser</a></td>		<!--Genome browser-->
+
+		<td><div style="width: 200px;">Cystic fibrosis transmembrane conductance regulator</div></td>		<!--Protein Names UniProt-->
+
+		<td><a href="http://www.uniprot.org/uniprot/P13569">P13569</a></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;">		<!--num UniProt-->
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_000483.3">NP_000483.3</a>		<!--num Prot RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENSP00000417012">ENSP00000417012</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENSP00000003084">ENSP00000003084</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENSP00000389119">ENSP00000389119</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENSP00000419254">ENSP00000419254</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENSP00000470177">ENSP00000470177</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENSP00000160373">ENSP00000160373</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENSP00000389576">ENSP00000389576</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENSP00000397678">ENSP00000397678</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENSP00000389491">ENSP00000389491</a>	<!--num Prot ensEMBL--><br>
+</div></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;"><a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_000492.3">NM_000492.3</a>		<!--num ARNm RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000546407">ENST00000546407</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000446805">ENST00000446805</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000003084">ENST00000003084</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000426809">ENST00000426809</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000433478">ENST00000433478</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000472848">ENST00000472848</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000441019">ENST00000441019</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000448200">ENST00000448200</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000456270">ENST00000456270</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000468795">ENST00000468795</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000600166">ENST00000600166</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000429014">ENST00000429014</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000608965">ENST00000608965</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000610149">ENST00000610149</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000160373">ENST00000160373</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000446636">ENST00000446636</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000441556">ENST00000441556</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000445366">ENST00000445366</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000001626;p=ENST00000621535">ENST00000621535</a>		<!--num ARNm ensEMBL--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://pfam.xfam.org/protein/CFTR_human">PF00005</a>		<!--Pfam Id--><br>
+<a href="http://pfam.xfam.org/protein/CFTR_human">PF00664</a>		<!--Pfam Id--><br>
+<a href="http://pfam.xfam.org/protein/CFTR_human">PF14396</a>		<!--Pfam Id--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS50929">PS50929</a>		<!--Prosite Id--><br>
+<a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS50893">PS50893</a>		<!--Prosite Id--><br>
+<a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS00211">PS00211</a>		<!--Prosite Id--><br>
+</div></td><td><div style="width: 600px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1XMI">Crystal structure of human F508A NBD1 domain with ATP (Id: 1XMI)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1XMJ">Crystal structure of human deltaF508 human NBD1 domain with ATP (Id: 1XMJ)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=2BBO">Human NBD1 with Phe508 (Id: 2BBO)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=2BBS">Human deltaF508 NBD1 with three solubilizing mutations (Id: 2BBS)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=2BBT">Human deltaF508 NBD1 with two solublizing mutations. (Id: 2BBT)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=2LOB:22PZE">PDZ Domain of CAL (Cystic Fibrosis Transmembrane Regulator-Associated Ligand) (Id: 2LOB:2
+2PZE)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=2PZF">Minimal human CFTR first nucleotide binding domain as a head-to-tail dimer with delta F508 (Id: 2PZF)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=2PZG">Minimal human CFTR first nucleotide binding domain as a monomer (Id: 2PZG)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=3GD7">Crystal structure of human NBD2 complexed with N6-Phenylethyl-ATP (P-ATP) (Id: 3GD7)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=3ISW:24WZ6">Crystal structure of filamin-A immunoglobulin-like repeat 21 bound to an N-terminal peptide of CFTR (Id: 3ISW:2
+4WZ6)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=5D2D:25D3E:25D3F:25UAK">Crystal structure of human 14-3-3 zeta in complex with CFTR R-domain peptide pS753-pS768 (Id: 5D2D:2
+5D3E:2
+5D3F:2
+5UAK)</a>		<!--PDB structure--><br>
+</div></td><td><div style="width: 750px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0006695">GO:0006695 : cholesterol biosynthetic process</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006810">GO:0006810 : transport</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006811">GO:0006811 : ion transport</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006821">GO:0006821 : chloride transport</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006904">GO:0006904 : vesicle docking involved in exocytosis</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007585">GO:0007585 : respiratory gaseous exchange</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0015701">GO:0015701 : bicarbonate transport</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030301">GO:0030301 : cholesterol transport</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0035774">GO:0035774 : positive regulation of insulin secretion involved in cellular response to glucose stimulus</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0045921">GO:0045921 : positive regulation of exocytosis</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0048240">GO:0048240 : sperm capacitation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0051454">GO:0051454 : intracellular pH elevation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0055085">GO:0055085 : transmembrane transport</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0060081">GO:0060081 : membrane hyperpolarization</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0071320">GO:0071320 : cellular response to cAMP</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:1902161">GO:1902161 : positive regulation of cyclic nucleotide-gated ion channel activity</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:1902476">GO:1902476 : chloride transmembrane transport</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:1902943">GO:1902943 : positive regulation of voltage-gated chloride channel activity</a>		<!--GO bio process--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0005737">GO:0005737 : cytoplasm</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005765">GO:0005765 : lysosomal membrane</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005768">GO:0005768 : endosome</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005769">GO:0005769 : early endosome</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005829">GO:0005829 : cytosol</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005886">GO:0005886 : plasma membrane</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0009986">GO:0009986 : cell surface</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0016020">GO:0016020 : membrane</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0016021">GO:0016021 : integral component of membrane</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0016323">GO:0016323 : basolateral plasma membrane</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0016324">GO:0016324 : apical plasma membrane</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030660">GO:0030660 : Golgi-associated vesicle membrane</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0031205">GO:0031205 : endoplasmic reticulum Sec complex</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0031901">GO:0031901 : early endosome membrane</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0034707">GO:0034707 : chloride channel complex</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0043234">GO:0043234 : protein complex</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0055037">GO:0055037 : recycling endosome</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0070062">GO:0070062 : extracellular exosome</a>		<!--GO Composé cell--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0000166">GO:0000166 : nucleotide binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005224">GO:0005224 : ATP-binding and phosphorylation-dependent chloride channel activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005254">GO:0005254 : chloride channel activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005260">GO:0005260 : channel-conductance-controlling ATPase activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005515">GO:0005515 : protein binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005524">GO:0005524 : ATP binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0015106">GO:0015106 : bicarbonate transmembrane transporter activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0015108">GO:0015108 : chloride transmembrane transporter activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0016787">GO:0016787 : hydrolase activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0016887">GO:0016887 : ATPase activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0017081">GO:0017081 : chloride channel regulator activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0019869">GO:0019869 : chloride channel inhibitor activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0019899">GO:0019899 : enzyme binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030165">GO:0030165 : PDZ domain binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0042626">GO:0042626 : ATPase activity, coupled to transmembrane movement of substances</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0043225">GO:0043225 : anion transmembrane-transporting ATPase activity</a>		<!--GO fonction--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa02010">hsa:1080	path:hsa02010</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04024">hsa:1080	path:hsa04024</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04152">hsa:1080	path:hsa04152</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04530">hsa:1080	path:hsa04530</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04971">hsa:1080	path:hsa04971</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04972">hsa:1080	path:hsa04972</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04976">hsa:1080	path:hsa04976</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05110">hsa:1080	path:hsa05110</a>		<!--Kegg Id--><br>
+</div></td><td><a href="http://www.ensembl.org/human/Gene/Compara_Ortholog?db=core;g=ENSG00000001626">Liste des orthologues</a></td>		<!--Liste des orthologues-->	</tr><tr role="row" class="even">	<td class="sorting_1"><b>CFTR_mouse</b></td>		<!--Gene Symbol-->
+
+		<td>cystic fibrosis transmembrane conductance regulator</td>		<!--Official Full Name-->
+
+		<td><a href="https://www.ncbi.nlm.nih.gov/gene/?term=12638">12638</a></td>		<!--Gene ID-->
+
+		<td><a href="http://www.ensembl.org/mouse/Gene/Summary?db=core;g=ENSMUSG00000041301">ENSMUSG00000041301</a><br>		<!--ensEMBL Gene-->
+	
+		    <a href="http://www.ensembl.org/mouse/Location/View?db=core;g=ENSMUSG00000041301">Genome Browser</a></td>		<!--Genome browser-->
+
+		<td><div style="width: 200px;">Cystic fibrosis transmembrane conductance regulator</div></td>		<!--Protein Names UniProt-->
+
+		<td><a href="http://www.uniprot.org/uniprot/P26361">P26361</a></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;">		<!--num UniProt-->
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_066388.1">NP_066388.1</a>		<!--num Prot RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000041301;p=ENSMUSP00000111064">ENSMUSP00000111064</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000041301;p=ENSMUSP00000116957">ENSMUSP00000116957</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000041301;p=ENSMUSP00000049228">ENSMUSP00000049228</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000041301;p=ENSMUSP00000115334">ENSMUSP00000115334</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000041301;p=ENSMUSP00000111065">ENSMUSP00000111065</a>	<!--num Prot ensEMBL--><br>
+</div></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;"><a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_021050.2">NM_021050.2</a>		<!--num ARNm RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000041301;p=ENSMUST00000115405">ENSMUST00000115405</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000041301;p=ENSMUST00000140407">ENSMUST00000140407</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000041301;p=ENSMUST00000045706">ENSMUST00000045706</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000041301;p=ENSMUST00000129452">ENSMUST00000129452</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000041301;p=ENSMUST00000115406">ENSMUST00000115406</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000041301;p=ENSMUST00000140532">ENSMUST00000140532</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000041301;p=ENSMUST00000143135">ENSMUST00000143135</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000041301;p=ENSMUST00000120840">ENSMUST00000120840</a>		<!--num ARNm ensEMBL--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://pfam.xfam.org/protein/CFTR_mouse">PF00005</a>		<!--Pfam Id--><br>
+<a href="http://pfam.xfam.org/protein/CFTR_mouse">PF00664</a>		<!--Pfam Id--><br>
+<a href="http://pfam.xfam.org/protein/CFTR_mouse">PF14396</a>		<!--Pfam Id--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS50929">PS50929</a>		<!--Prosite Id--><br>
+<a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS50893">PS50893</a>		<!--Prosite Id--><br>
+<a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS00211">PS00211</a>		<!--Prosite Id--><br>
+</div></td><td><div style="width: 600px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1Q3H">mouse CFTR NBD1 with AMP.PNP (Id: 1Q3H)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1R0W">Cystic fibrosis transmembrane conductance regulator (CFTR) nucleotide-binding domain one (NBD1) apo (Id: 1R0W)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1R0X">Cystic fibrosis transmembrane conductance regulator (CFTR) nucleotide-binding domain one (NBD1) with ATP (Id: 1R0X)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1R0Y">Cystic fibrosis transmembrane conductance regulator (CFTR) nucleotide-binding domain one (NBD1) with ADP (Id: 1R0Y)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1R0Z">Phosphorylated
+ Cystic fibrosis transmembrane conductance regulator (CFTR) 
+nucleotide-binding domain one (NBD1) with ATP (Id: 1R0Z)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1R10">Cystic
+ fibrosis transmembrane conductance regulator (CFTR) nucleotide-binding 
+domain one (NBD1) with ATP, I4122 space group (Id: 1R10)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1XF9">Structure of NBD1 from murine CFTR- F508S mutant (Id: 1XF9)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1XFA">Structure of NBD1 from murine CFTR- F508R mutant (Id: 1XFA)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=3SI7">The crystal structure of the NBD1 domain of the mouse CFTR protein, deltaF508 mutant (Id: 3SI7)</a>		<!--PDB structure--><br>
+</div></td><td><div style="width: 750px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0071320">GO:0071320 : cellular response to cAMP</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:1902476">GO:1902476 : chloride transmembrane transport</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006821">GO:0006821 : chloride transport</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006695">GO:0006695 : cholesterol biosynthetic process</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030301">GO:0030301 : cholesterol transport</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0051454">GO:0051454 : intracellular pH elevation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0060081">GO:0060081 : membrane hyperpolarization</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:1902161">GO:1902161 : positive regulation of cyclic nucleotide-gated ion channel activity</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0045921">GO:0045921 : positive regulation of exocytosis</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0035774">GO:0035774 : positive regulation of insulin secretion involved in cellular response to glucose stimulus</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:1902943">GO:1902943 : positive regulation of voltage-gated chloride channel activity</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0048240">GO:0048240 : sperm capacitation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006904">GO:0006904 : vesicle docking involved in exocytosis</a>		<!--GO bio process--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0016324">GO:0016324 : apical plasma membrane</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0009986">GO:0009986 : cell surface</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0034707">GO:0034707 : chloride channel complex</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005737">GO:0005737 : cytoplasm</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005829">GO:0005829 : cytosol</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005769">GO:0005769 : early endosome</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0031901">GO:0031901 : early endosome membrane</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0031205">GO:0031205 : endoplasmic reticulum Sec complex</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0070062">GO:0070062 : extracellular exosome</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005886">GO:0005886 : plasma membrane</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0043234">GO:0043234 : protein complex</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0055037">GO:0055037 : recycling endosome</a>		<!--GO Composé cell--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0005524">GO:0005524 : ATP binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0015106">GO:0015106 : bicarbonate transmembrane transporter activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005260">GO:0005260 : channel-conductance-controlling ATPase activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005254">GO:0005254 : chloride channel activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0019869">GO:0019869 : chloride channel inhibitor activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0015108">GO:0015108 : chloride transmembrane transporter activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0019899">GO:0019899 : enzyme binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030165">GO:0030165 : PDZ domain binding</a>		<!--GO fonction--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:mmu02010">mmu:12638	path:mmu02010</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:mmu04024">mmu:12638	path:mmu04024</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:mmu04152">mmu:12638	path:mmu04152</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:mmu04530">mmu:12638	path:mmu04530</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:mmu04971">mmu:12638	path:mmu04971</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:mmu04972">mmu:12638	path:mmu04972</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:mmu04976">mmu:12638	path:mmu04976</a>		<!--Kegg Id--><br>
+</div></td><td><a href="http://www.ensembl.org/mouse/Gene/Compara_Ortholog?db=core;g=ENSMUSG00000041301">Liste des orthologues</a></td>		<!--Liste des orthologues-->	</tr><tr role="row" class="odd">	<td class="sorting_1"><b>Cntnap1_mouse</b></td>		<!--Gene Symbol-->
+
+		<td>contactin associated protein-like 1</td>		<!--Official Full Name-->
+
+		<td><a href="https://www.ncbi.nlm.nih.gov/gene/?term=53321">53321</a></td>		<!--Gene ID-->
+
+		<td><a href="http://www.ensembl.org/mouse/Gene/Summary?db=core;g=ENSMUSG00000017167">ENSMUSG00000017167</a><br>		<!--ensEMBL Gene-->
+	
+		    <a href="http://www.ensembl.org/mouse/Location/View?db=core;g=ENSMUSG00000017167">Genome Browser</a></td>		<!--Genome browser-->
+
+		<td><div style="width: 200px;"></div></td>		<!--Protein Names UniProt-->
+
+		<td><a href="http://www.uniprot.org/uniprot/"></a></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;">		<!--num UniProt-->
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_058062.2">NP_058062.2</a>		<!--num Prot RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000017167;p=ENSMUSP00000137841">ENSMUSP00000137841</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000017167;p=ENSMUSP00000046044">ENSMUSP00000046044</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000017167;p=ENSMUSP00000127088">ENSMUSP00000127088</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000017167;p=ENSMUSP00000062588">ENSMUSP00000062588</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000017167;p=ENSMUSP00000099398">ENSMUSP00000099398</a>	<!--num Prot ensEMBL--><br>
+</div></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;"><a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_016782.2">NM_016782.2</a>		<!--num ARNm RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000017167;p=ENSMUST00000129895">ENSMUST00000129895</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000017167;p=ENSMUST00000043397">ENSMUST00000043397</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000017167;p=ENSMUST00000164474">ENSMUST00000164474</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000017167;p=ENSMUST00000138942">ENSMUST00000138942</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000017167;p=ENSMUST00000062759">ENSMUST00000062759</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/mouse/Transcript/Sequence_Protein?db=core;g=ENSMUSG00000017167;p=ENSMUST00000103109">ENSMUST00000103109</a>		<!--num ARNm ensEMBL--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 600px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 750px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:mmu04514">mmu:53321	path:mmu04514</a>		<!--Kegg Id--><br>
+</div></td><td><a href="http://www.ensembl.org/mouse/Gene/Compara_Ortholog?db=core;g=ENSMUSG00000017167">Liste des orthologues</a></td>		<!--Liste des orthologues-->	</tr><tr role="row" class="even">	<td class="sorting_1"><b>NPHP1_human</b></td>		<!--Gene Symbol-->
+
+		<td>nephrocystin 1</td>		<!--Official Full Name-->
+
+		<td><a href="https://www.ncbi.nlm.nih.gov/gene/?term=4867">4867</a></td>		<!--Gene ID-->
+
+		<td><a href="http://www.ensembl.org/human/Gene/Summary?db=core;g=ENSG00000144061">ENSG00000144061</a><br>		<!--ensEMBL Gene-->
+	
+		    <a href="http://www.ensembl.org/human/Location/View?db=core;g=ENSG00000144061">Genome Browser</a></td>		<!--Genome browser-->
+
+		<td><div style="width: 200px;">Nephrocystin-1</div></td>		<!--Protein Names UniProt-->
+
+		<td><a href="http://www.uniprot.org/uniprot/O15259">O15259</a></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;">		<!--num UniProt-->
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_000263.2">NP_000263.2</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001121650.1">NP_001121650.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001121651.1">NP_001121651.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_997064.2">NP_997064.2</a>		<!--num Prot RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENSP00000313169">ENSP00000313169</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENSP00000389879">ENSP00000389879</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENSP00000376953">ENSP00000376953</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENSP00000347452">ENSP00000347452</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENSP00000402176">ENSP00000402176</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENSP00000392562">ENSP00000392562</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENSP00000412351">ENSP00000412351</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENSP00000406453">ENSP00000406453</a>	<!--num Prot ensEMBL--><br>
+</div></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;"><a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_000272.3">NM_000272.3</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001128178.1">NM_001128178.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001128179.1">NM_001128179.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_207181.2">NM_207181.2</a>		<!--num ARNm RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENST00000316534">ENST00000316534</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENST00000445609">ENST00000445609</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENST00000393272">ENST00000393272</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENST00000496524">ENST00000496524</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENST00000461707">ENST00000461707</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENST00000355301">ENST00000355301</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENST00000417665">ENST00000417665</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENST00000422492">ENST00000422492</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENST00000493051">ENST00000493051</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENST00000418527">ENST00000418527</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENST00000449600">ENST00000449600</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000144061;p=ENST00000418944">ENST00000418944</a>		<!--num ARNm ensEMBL--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://pfam.xfam.org/protein/NPHP1_human">PF00018</a>		<!--Pfam Id--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS50002">PS50002</a>		<!--Prosite Id--><br>
+</div></td><td><div style="width: 600px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1S1N">SH3 domain of human nephrocystin (Id: 1S1N)</a>		<!--PDB structure--><br>
+</div></td><td><div style="width: 750px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0007165">GO:0007165 : signal transduction</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007283">GO:0007283 : spermatogenesis</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007588">GO:0007588 : excretion</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007632">GO:0007632 : visual behavior</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0016337">GO:0016337 : single organismal cell-cell adhesion</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030030">GO:0030030 : cell projection organization</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030036">GO:0030036 : actin cytoskeleton organization</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030154">GO:0030154 : cell differentiation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0048515">GO:0048515 : spermatid differentiation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0060041">GO:0060041 : retina development in camera-type eye</a>		<!--GO bio process--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0005737">GO:0005737 : cytoplasm</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005829">GO:0005829 : cytosol</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005856">GO:0005856 : cytoskeleton</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005911">GO:0005911 : cell-cell junction</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005912">GO:0005912 : adherens junction</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005923">GO:0005923 : bicellular tight junction</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005929">GO:0005929 : cilium</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0016020">GO:0016020 : membrane</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0030054">GO:0030054 : cell junction</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0031514">GO:0031514 : motile cilium</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0032391">GO:0032391 : photoreceptor connecting cilium</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0042995">GO:0042995 : cell projection</a>		<!--GO Composé cell--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0005198">GO:0005198 : structural molecule activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005515">GO:0005515 : protein binding</a>		<!--GO fonction--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><a href="http://www.ensembl.org/human/Gene/Compara_Ortholog?db=core;g=ENSG00000144061">Liste des orthologues</a></td>		<!--Liste des orthologues-->	</tr><tr role="row" class="odd">	<td class="sorting_1"><b>RAD51_human</b></td>		<!--Gene Symbol-->
+
+		<td>RAD51 recombinase</td>		<!--Official Full Name-->
+
+		<td><a href="https://www.ncbi.nlm.nih.gov/gene/?term=5888">5888</a></td>		<!--Gene ID-->
+
+		<td><a href="http://www.ensembl.org/human/Gene/Summary?db=core;g=ENSG00000051180">ENSG00000051180</a><br>		<!--ensEMBL Gene-->
+	
+		    <a href="http://www.ensembl.org/human/Location/View?db=core;g=ENSG00000051180">Genome Browser</a></td>		<!--Genome browser-->
+
+		<td><div style="width: 200px;">DNA repair protein RAD51 homolog 1</div></td>		<!--Protein Names UniProt-->
+
+		<td><a href="http://www.uniprot.org/uniprot/Q06609">Q06609</a></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;">		<!--num UniProt-->
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001157741.1">NP_001157741.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001157742.1">NP_001157742.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_002866.2">NP_002866.2</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_597994.3">NP_597994.3</a>		<!--num Prot RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENSP00000432759">ENSP00000432759</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENSP00000406602">ENSP00000406602</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENSP00000267868">ENSP00000267868</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENSP00000454176">ENSP00000454176</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENSP00000433924">ENSP00000433924</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENSP00000372088">ENSP00000372088</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENSP00000431864">ENSP00000431864</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENSP00000431897">ENSP00000431897</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENSP00000436512">ENSP00000436512</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENSP00000433053">ENSP00000433053</a>	<!--num Prot ensEMBL--><br>
+</div></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;"><a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001164269.1">NM_001164269.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001164270.1">NM_001164270.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_002875.4">NM_002875.4</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_133487.3">NM_133487.3</a>		<!--num ARNm RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENST00000533146">ENST00000533146</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENST00000526635">ENST00000526635</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENST00000499988">ENST00000499988</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENST00000527860">ENST00000527860</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENST00000423169">ENST00000423169</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENST00000267868">ENST00000267868</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENST00000557850">ENST00000557850</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENST00000532743">ENST00000532743</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENST00000382643">ENST00000382643</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENST00000525066">ENST00000525066</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENST00000526763">ENST00000526763</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENST00000531277">ENST00000531277</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000051180;p=ENST00000533741">ENST00000533741</a>		<!--num ARNm ensEMBL--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://pfam.xfam.org/protein/RAD51_human">PF14520</a>		<!--Pfam Id--><br>
+<a href="http://pfam.xfam.org/protein/RAD51_human">PF08423</a>		<!--Pfam Id--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS50162">PS50162</a>		<!--Prosite Id--><br>
+<a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS50163">PS50163</a>		<!--Prosite Id--><br>
+</div></td><td><div style="width: 600px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1B22">RAD51 (N-TERMINAL DOMAIN) (Id: 1B22)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=1N0W">Crystal structure of a RAD51-BRCA2 BRC repeat complex (Id: 1N0W)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=5H1B">Human RAD51 presynaptic complex (Id: 5H1B)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=5H1C">Human RAD51 post-synaptic complexes (Id: 5H1C)</a>		<!--PDB structure--><br>
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=5JZC">helical filament (Id: 5JZC)</a>		<!--PDB structure--><br>
+</div></td><td><div style="width: 750px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0000722">GO:0000722 : telomere maintenance via recombination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000724">GO:0000724 : double-strand break repair via homologous recombination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000730">GO:0000730 : DNA recombinase assembly</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000731">GO:0000731 : DNA synthesis involved in DNA repair</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000732">GO:0000732 : strand displacement</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0001932">GO:0001932 : regulation of protein phosphorylation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006259">GO:0006259 : DNA metabolic process</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006268">GO:0006268 : DNA unwinding involved in DNA replication</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006281">GO:0006281 : DNA repair</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006310">GO:0006310 : DNA recombination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006312">GO:0006312 : mitotic recombination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0006974">GO:0006974 : cellular response to DNA damage stimulus</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007126">GO:0007126 : meiotic nuclear division</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007127">GO:0007127 : meiosis I</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0007131">GO:0007131 : reciprocal meiotic recombination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0009636">GO:0009636 : response to toxic substance</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0010165">GO:0010165 : response to X-ray</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0010569">GO:0010569 : regulation of double-strand break repair via homologous recombination</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0010833">GO:0010833 : telomere maintenance via telomere lengthening</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0014070">GO:0014070 : response to organic cyclic compound</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0031297">GO:0031297 : replication fork processing</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0032200">GO:0032200 : telomere organization</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0042148">GO:0042148 : strand invasion</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0042493">GO:0042493 : response to drug</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0051106">GO:0051106 : positive regulation of DNA ligation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0051260">GO:0051260 : protein homooligomerization</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0070192">GO:0070192 : chromosome organization involved in meiotic cell cycle</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0071312">GO:0071312 : cellular response to alkaloid</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0071479">GO:0071479 : cellular response to ionizing radiation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0071480">GO:0071480 : cellular response to gamma radiation</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0072711">GO:0072711 : cellular response to hydroxyurea</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0072719">GO:0072719 : cellular response to cisplatin</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0072757">GO:0072757 : cellular response to camptothecin</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:1902521">GO:1902521 : response to etoposide</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:1990414">GO:1990414 : replication-born double-strand break repair via sister chromatid exchange</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:1990426">GO:1990426 : mitotic recombination-dependent replication fork processing</a>		<!--GO bio process--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0000228">GO:0000228 : nuclear chromosome</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000784">GO:0000784 : nuclear chromosome, telomeric region</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000785">GO:0000785 : chromatin</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000793">GO:0000793 : condensed chromosome</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000794">GO:0000794 : condensed nuclear chromosome</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000800">GO:0000800 : lateral element</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005634">GO:0005634 : nucleus</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005654">GO:0005654 : nucleoplasm</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005730">GO:0005730 : nucleolus</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005737">GO:0005737 : cytoplasm</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005739">GO:0005739 : mitochondrion</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005759">GO:0005759 : mitochondrial matrix</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005815">GO:0005815 : microtubule organizing center</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005856">GO:0005856 : cytoskeleton</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0016605">GO:0016605 : PML body</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0035861">GO:0035861 : site of double-strand break</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0048471">GO:0048471 : perinuclear region of cytoplasm</a>		<!--GO Composé cell--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0000150">GO:0000150 : recombinase activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000166">GO:0000166 : nucleotide binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0000400">GO:0000400 : four-way junction DNA binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0003677">GO:0003677 : DNA binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0003682">GO:0003682 : chromatin binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0003690">GO:0003690 : double-stranded DNA binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0003697">GO:0003697 : single-stranded DNA binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0004520">GO:0004520 : endodeoxyribonuclease activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005515">GO:0005515 : protein binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005524">GO:0005524 : ATP binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0008022">GO:0008022 : protein C-terminus binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0008094">GO:0008094 : DNA-dependent ATPase activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0042802">GO:0042802 : identical protein binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0043142">GO:0043142 : single-stranded DNA-dependent ATPase activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0070182">GO:0070182 : DNA polymerase binding</a>		<!--GO fonction--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa03440">hsa:5888	path:hsa03440</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa03460">hsa:5888	path:hsa03460</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05200">hsa:5888	path:hsa05200</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05212">hsa:5888	path:hsa05212</a>		<!--Kegg Id--><br>
+</div></td><td><a href="http://www.ensembl.org/human/Gene/Compara_Ortholog?db=core;g=ENSG00000051180">Liste des orthologues</a></td>		<!--Liste des orthologues-->	</tr><tr role="row" class="even">	<td class="sorting_1"><b>RHO_human</b></td>		<!--Gene Symbol-->
+
+		<td>rhodopsin</td>		<!--Official Full Name-->
+
+		<td><a href="https://www.ncbi.nlm.nih.gov/gene/?term=6010">6010</a></td>		<!--Gene ID-->
+
+		<td><a href="http://www.ensembl.org/human/Gene/Summary?db=core;g=ENSG00000163914">ENSG00000163914</a><br>		<!--ensEMBL Gene-->
+	
+		    <a href="http://www.ensembl.org/human/Location/View?db=core;g=ENSG00000163914">Genome Browser</a></td>		<!--Genome browser-->
+
+		<td><div style="width: 200px;"></div></td>		<!--Protein Names UniProt-->
+
+		<td><a href="http://www.uniprot.org/uniprot/"></a></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;">		<!--num UniProt-->
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_000530.1">NP_000530.1</a>		<!--num Prot RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000163914;p=ENSP00000296271">ENSP00000296271</a>	<!--num Prot ensEMBL--><br>
+</div></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;"><a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_000539.3">NM_000539.3</a>		<!--num ARNm RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000163914;p=ENST00000296271">ENST00000296271</a>		<!--num ARNm ensEMBL--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 600px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 750px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04744">hsa:6010	path:hsa04744</a>		<!--Kegg Id--><br>
+</div></td><td><a href="http://www.ensembl.org/human/Gene/Compara_Ortholog?db=core;g=ENSG00000163914">Liste des orthologues</a></td>		<!--Liste des orthologues-->	</tr><tr role="row" class="odd">	<td class="sorting_1"><b>SSH3_rat</b></td>		<!--Gene Symbol-->
+
+		<td>slingshot protein phosphatase 3</td>		<!--Official Full Name-->
+
+		<td><a href="https://www.ncbi.nlm.nih.gov/gene/?term=365396">365396</a></td>		<!--Gene ID-->
+
+		<td><a href="http://www.ensembl.org/rat/Gene/Summary?db=core;g=ENSRNOG00000018878">ENSRNOG00000018878</a><br>		<!--ensEMBL Gene-->
+	
+		    <a href="http://www.ensembl.org/rat/Location/View?db=core;g=ENSRNOG00000018878">Genome Browser</a></td>		<!--Genome browser-->
+
+		<td><div style="width: 200px;">Protein phosphatase Slingshot homolog 3</div></td>		<!--Protein Names UniProt-->
+
+		<td><a href="http://www.uniprot.org/uniprot/Q5XIS1">Q5XIS1</a></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;">		<!--num UniProt-->
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001012217.1">NP_001012217.1</a>		<!--num Prot RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/rat/Transcript/Sequence_Protein?db=core;g=ENSRNOG00000018878;p=ENSRNOP00000025546">ENSRNOP00000025546</a>	<!--num Prot ensEMBL--><br>
+</div></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;"><a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001012217.1">NM_001012217.1</a>		<!--num ARNm RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/rat/Transcript/Sequence_Protein?db=core;g=ENSRNOG00000018878;p=ENSRNOT00000025546">ENSRNOT00000025546</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/rat/Transcript/Sequence_Protein?db=core;g=ENSRNOG00000018878;p=ENSRNOT00000079721">ENSRNOT00000079721</a>		<!--num ARNm ensEMBL--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://pfam.xfam.org/protein/SSH3_rat">PF00782</a>		<!--Pfam Id--><br>
+<a href="http://pfam.xfam.org/protein/SSH3_rat">PF08766</a>		<!--Pfam Id--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS50054">PS50054</a>		<!--Prosite Id--><br>
+<a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS50056">PS50056</a>		<!--Prosite Id--><br>
+<a href="http://prosite.expasy.org/cgi-bin/prosite/nicedoc.pl?PS00383">PS00383</a>		<!--Prosite Id--><br>
+</div></td><td><div style="width: 600px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 750px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0008064">GO:0008064 : regulation of actin polymerization or depolymerization</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0050770">GO:0050770 : regulation of axonogenesis</a>		<!--GO bio process--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0010591">GO:0010591 : regulation of lamellipodium assembly</a>		<!--GO bio process--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0005737">GO:0005737 : cytoplasm</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005856">GO:0005856 : cytoskeleton</a>		<!--GO Composé cell--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0005634">GO:0005634 : nucleus</a>		<!--GO Composé cell--><br>
+</div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://amigo.geneontology.org/amigo/term/GO:0003779">GO:0003779 : actin binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0003677">GO:0003677 : DNA binding</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0004725">GO:0004725 : protein tyrosine phosphatase activity</a>		<!--GO fonction--><br>
+<a href="http://amigo.geneontology.org/amigo/term/GO:0008138">GO:0008138 : protein tyrosine/serine/threonine phosphatase activity</a>		<!--GO fonction--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:rno04360">rno:365396	path:rno04360</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:rno04810">rno:365396	path:rno04810</a>		<!--Kegg Id--><br>
+</div></td><td><a href="http://www.ensembl.org/rat/Gene/Compara_Ortholog?db=core;g=ENSRNOG00000018878">Liste des orthologues</a></td>		<!--Liste des orthologues-->	</tr><tr role="row" class="even">	<td class="sorting_1"><b>TP53_human</b></td>		<!--Gene Symbol-->
+
+		<td>tumor protein p53</td>		<!--Official Full Name-->
+
+		<td><a href="https://www.ncbi.nlm.nih.gov/gene/?term=7157">7157</a></td>		<!--Gene ID-->
+
+		<td><a href="http://www.ensembl.org/human/Gene/Summary?db=core;g=ENSG00000141510">ENSG00000141510</a><br>		<!--ensEMBL Gene-->
+	
+		    <a href="http://www.ensembl.org/human/Location/View?db=core;g=ENSG00000141510">Genome Browser</a></td>		<!--Genome browser-->
+
+		<td><div style="width: 200px;"></div></td>		<!--Protein Names UniProt-->
+
+		<td><a href="http://www.uniprot.org/uniprot/"></a></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;">		<!--num UniProt-->
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_000537.3">NP_000537.3</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001119584.1">NP_001119584.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001119585.1">NP_001119585.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001119586.1">NP_001119586.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001119587.1">NP_001119587.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001119588.1">NP_001119588.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001119589.1">NP_001119589.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001119590.1">NP_001119590.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001263624.1">NP_001263624.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001263625.1">NP_001263625.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001263626.1">NP_001263626.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001263627.1">NP_001263627.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001263628.1">NP_001263628.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001263689.1">NP_001263689.1</a>		<!--num Prot RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/protein/NP_001263690.1">NP_001263690.1</a>		<!--num Prot RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000410739">ENSP00000410739</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000488924">ENSP00000488924</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000352610">ENSP00000352610</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000484409">ENSP00000484409</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000478499">ENSP00000478499</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000481179">ENSP00000481179</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000484375">ENSP00000484375</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000481401">ENSP00000481401</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000477531">ENSP00000477531</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000478219">ENSP00000478219</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000269305">ENSP00000269305</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000481638">ENSP00000481638</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000482258">ENSP00000482258</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000398846">ENSP00000398846</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000391127">ENSP00000391127</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000482222">ENSP00000482222</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000480868">ENSP00000480868</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000391478">ENSP00000391478</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000482537">ENSP00000482537</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000458393">ENSP00000458393</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000482903">ENSP00000482903</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000425104">ENSP00000425104</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000423862">ENSP00000423862</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000424104">ENSP00000424104</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000473895">ENSP00000473895</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000426252">ENSP00000426252</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000397219">ENSP00000397219</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000324203">ENSP00000324203</a>	<!--num Prot ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENSP00000411061">ENSP00000411061</a>	<!--num Prot ensEMBL--><br>
+</div></td><td><div style="width: 200px; height: 200px; white-space:nowrap; overflow:auto;"><a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_000546.5">NM_000546.5</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001126112.2">NM_001126112.2</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001126113.2">NM_001126113.2</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001126114.2">NM_001126114.2</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001126115.1">NM_001126115.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001126116.1">NM_001126116.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001126117.1">NM_001126117.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001126118.1">NM_001126118.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001276695.1">NM_001276695.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001276696.1">NM_001276696.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001276697.1">NM_001276697.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001276698.1">NM_001276698.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001276699.1">NM_001276699.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001276760.1">NM_001276760.1</a>		<!--num ARNm RefSeq--><br>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_001276761.1">NM_001276761.1</a>		<!--num ARNm RefSeq--><br>
+</div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000413465">ENST00000413465</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000635293">ENST00000635293</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000359597">ENST00000359597</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000504290">ENST00000504290</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000510385">ENST00000510385</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000504937">ENST00000504937</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000619186">ENST00000619186</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000618944">ENST00000618944</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000610623">ENST00000610623</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000610292">ENST00000610292</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000269305">ENST00000269305</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000620739">ENST00000620739</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000617185">ENST00000617185</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000455263">ENST00000455263</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000420246">ENST00000420246</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000622645">ENST00000622645</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000610538">ENST00000610538</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000445888">ENST00000445888</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000619485">ENST00000619485</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000576024">ENST00000576024</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000615910">ENST00000615910</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000509690">ENST00000509690</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000514944">ENST00000514944</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000574684">ENST00000574684</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000505014">ENST00000505014</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000508793">ENST00000508793</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000604348">ENST00000604348</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000503591">ENST00000503591</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000571370">ENST00000571370</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000431639">ENST00000431639</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000316024">ENST00000316024</a>		<!--num ARNm ensEMBL--><br>
+<a href="http://www.ensembl.org/human/Transcript/Sequence_Protein?db=core;g=ENSG00000141510;p=ENST00000457584">ENST00000457584</a>		<!--num ARNm ensEMBL--><br>
+</div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 180px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 600px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 750px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 700px; height: 200px; white-space:nowrap; overflow:auto;"></div></td><td><div style="width: 250px; height: 200px; white-space:nowrap; overflow:auto;"><a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa01522">hsa:7157	path:hsa01522</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa01524">hsa:7157	path:hsa01524</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04010">hsa:7157	path:hsa04010</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04071">hsa:7157	path:hsa04071</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04110">hsa:7157	path:hsa04110</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04115">hsa:7157	path:hsa04115</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04151">hsa:7157	path:hsa04151</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04210">hsa:7157	path:hsa04210</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04211">hsa:7157	path:hsa04211</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04310">hsa:7157	path:hsa04310</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04722">hsa:7157	path:hsa04722</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa04919">hsa:7157	path:hsa04919</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05014">hsa:7157	path:hsa05014</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05016">hsa:7157	path:hsa05016</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05160">hsa:7157	path:hsa05160</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05161">hsa:7157	path:hsa05161</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05162">hsa:7157	path:hsa05162</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05166">hsa:7157	path:hsa05166</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05168">hsa:7157	path:hsa05168</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05169">hsa:7157	path:hsa05169</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05200">hsa:7157	path:hsa05200</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05202">hsa:7157	path:hsa05202</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05203">hsa:7157	path:hsa05203</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05205">hsa:7157	path:hsa05205</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05206">hsa:7157	path:hsa05206</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05210">hsa:7157	path:hsa05210</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05212">hsa:7157	path:hsa05212</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05213">hsa:7157	path:hsa05213</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05214">hsa:7157	path:hsa05214</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05215">hsa:7157	path:hsa05215</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05216">hsa:7157	path:hsa05216</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05217">hsa:7157	path:hsa05217</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05218">hsa:7157	path:hsa05218</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05219">hsa:7157	path:hsa05219</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05220">hsa:7157	path:hsa05220</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05222">hsa:7157	path:hsa05222</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05223">hsa:7157	path:hsa05223</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05224">hsa:7157	path:hsa05224</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05230">hsa:7157	path:hsa05230</a>		<!--Kegg Id--><br>
+<a href="http://www.genome.jp/dbget-bin/www_bget?pathway+path:hsa05418">hsa:7157	path:hsa05418</a>		<!--Kegg Id--><br>
+</div></td><td><a href="http://www.ensembl.org/human/Gene/Compara_Ortholog?db=core;g=ENSG00000141510">Liste des orthologues</a></td>		<!--Liste des orthologues-->	</tr></tbody></table></div></div><div class="fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"><div class="dataTables_info" id="table_id_info" role="status" aria-live="polite">Showing 1 to 10 of 10 entries</div><div class="dataTables_paginate fg-buttonset ui-buttonset fg-buttonset-multi ui-buttonset-multi paging_simple_numbers" id="table_id_paginate"><a class="fg-button ui-button ui-state-default previous ui-state-disabled" aria-controls="table_id" data-dt-idx="0" tabindex="0" id="table_id_previous">Previous</a><span><a class="fg-button ui-button ui-state-default ui-state-disabled" aria-controls="table_id" data-dt-idx="1" tabindex="0">1</a></span><a class="fg-button ui-button ui-state-default next ui-state-disabled" aria-controls="table_id" data-dt-idx="2" tabindex="0" id="table_id_next">Next</a></div></div></div>
+</body></html>
