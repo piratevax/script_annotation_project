@@ -1,13 +1,39 @@
-# --- DataAnalysis.pm ---
+#!/usr/bin/perl
+
 package DataAnalysis;
+
+=head1 NAME
+
+    DataAnalysis.pm
+
+=head1 SYNOPSIS
+
+    blabla
+
+=head1 AUTHOR
+
+    Xavier Bussell
+
+=cut
+
+#
+# Imports
+#
+
 use strict;
 use warnings;
+use Bio::Seq;
+use Bio::SeqIO;
 
-=head1 FUNCTION new
+=head1 FUNCTION DataAnalysis->new()
 
     constructeur
 
 =cut
+
+#
+# Constructor
+#
 
 sub new {
     my ($class, $geneSymbol, $organism) = @_;
@@ -18,7 +44,11 @@ sub new {
     return $this;
 }
 
-=head1 FUNCTION set_geneSymbol
+#
+# Functions
+#
+
+=head1 FUNCTION DataAnalysis->set_geneSymbol()
 
     set variable : gene symbol
 
