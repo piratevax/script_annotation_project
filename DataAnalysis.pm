@@ -101,13 +101,15 @@ sub get_organism {
 
 sub compute_ncbi {
     my ($this) = @_;
-    my $erm = '"'.$this->get_geneSymbol.'[Gene Name] AND "'.$this->get_organism.'"[Orgaism]';
+    my $term = '"'.$this->get_geneSymbol.'[Gene Name] AND "'.$this->get_organism.'"[Orgaism]';
     my $factory = Bio::DB;EUtilities->new(-eutil => 'esearch',
 	    -db => 'gene',
 	    -term => $term,
 	    -email => 'mymail@foo.bar');
     print "count ncbi: ".$factory->get_count."\n";
-    print "id ncbi: ".$factory->get_ids."\n";
+    my @ids = $factory->get_ids;
+    print "id ncbi: ".$ids[0]."\n";
+#    $this->{NCBI_ID} = \@ids;
 }
 
 
