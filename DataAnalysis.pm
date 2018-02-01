@@ -18,14 +18,15 @@ sub new {
     return $this;
 }
 
-=head1 FUNCTION set_
+=head1 FUNCTION set_geneSymbol
 
-    set variable : 
+    set variable : gene symbol 
 
 =cut
 
-sub set_ {
-
+sub set_geneSymbol {
+    my ($this, $geneSymbol);
+    $this->{GS} = $geneSymbol;
 }
 
 
