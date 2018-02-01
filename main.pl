@@ -6,8 +6,6 @@ use warnings;
 use Bio::Seq;
 use Bio::SeqIO;
 use DataAnalysis;
-use Bio::Seq;
-use Bio::SeqIO;
 
 my $DEBUGG = 0;
 my ($geneSymbol, $organism, $analysis);

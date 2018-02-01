@@ -102,7 +102,7 @@ sub get_organism {
 sub compute_ncbi {
     my ($this) = @_;
     my $term = '"'.$this->get_geneSymbol.'[Gene Name] AND "'.$this->get_organism.'"[Orgaism]';
-    my $factory = Bio::DB;EUtilities->new(-eutil => 'esearch',
+    my $factory = Bio::DB::EUtilities->new(-eutil => 'esearch',
 	    -db => 'gene',
 	    -term => $term,
 	    -email => 'mymail@foo.bar');
