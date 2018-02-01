@@ -20,7 +20,7 @@ sub new {
 
 =head1 FUNCTION set_geneSymbol
 
-    set variable : gene symbol 
+    set variable : gene symbol
 
 =cut
 
@@ -29,6 +29,16 @@ sub set_geneSymbol {
     $this->{GS} = $geneSymbol;
 }
 
+=head1 FUNCTION set_orgnaism
+
+    set variable : organism
+
+=cut
+
+sub set_organism {
+    my ($this, $organism);
+    $this->{ORGANISM} = $organism;
+}
 
 =head1 FUNCTION get_
 
