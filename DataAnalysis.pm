@@ -110,6 +110,11 @@ sub compute_ncbi {
     my @ids = $factory->get_ids;
     print "id ncbi: ".$ids[0]."\n";
 #    $this->{NCBI_ID} = \@ids;
+    my $factory2 = Bio::DB::EUtilities->new(-eutil => 'egquery',
+	    -email => 'mymail@foo.bar',
+	    -term => $term);
+    print "egquery:\n";
+    $factory2->print_all;
 }
 
 
