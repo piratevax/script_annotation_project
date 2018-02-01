@@ -24,6 +24,7 @@ use strict;
 use warnings;
 use Bio::Seq;
 use Bio::SeqIO;
+use Bio::DB::EUtilities;
 
 =head1 FUNCTION DataAnalysis->new()
 
@@ -99,7 +100,14 @@ sub get_organism {
 =cut
 
 sub compute_ncbi {
-
+    my ($this) = @_;
+    my $erm = '"'.$this->get_geneSymbol.'[Gene Name] AND "'.$this->get_organism.'"[Orgaism]';
+    my $factory = Bio::DB;EUtilities->new(-eutil => 'esearch',
+	    -db => 'gene',
+	    -term => $term,
+	    -email => 'mymail@foo.bar');
+    print "count ncbi: ".$factory->get_count."\n";
+    print "id ncbi: ".$factory->get_ids."\n";
 }
 
 
