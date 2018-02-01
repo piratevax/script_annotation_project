@@ -25,7 +25,7 @@ sub new {
 =cut
 
 sub set_geneSymbol {
-    my ($this, $geneSymbol);
+    my ($this, $geneSymbol) = @_;
     $this->{GS} = $geneSymbol;
 }
 
@@ -36,18 +36,19 @@ sub set_geneSymbol {
 =cut
 
 sub set_organism {
-    my ($this, $organism);
+    my ($this, $organism) = @_;
     $this->{ORGANISM} = $organism;
 }
 
-=head1 FUNCTION get_
+=head1 FUNCTION get_geneSymbol
 
-    get variable : 
+    get variable : gene symbol
 
 =cut
 
-sub get_ {
-
+sub get_geneSymbol {
+    my ($this) = @_;
+    return $this->{GS};
 }
 
 
