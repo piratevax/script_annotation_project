@@ -51,6 +51,16 @@ sub get_geneSymbol {
     return $this->{GS};
 }
 
+=head1 FUNCTION get_organism
+
+    get variable : organism
+
+=cut
+
+sub get_organism {
+    my ($this) = @_;
+    return $this->{ORGANISM};
+}
 
 =head1 FUNCTION compute_ncbi
 
