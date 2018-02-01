@@ -102,26 +102,26 @@ sub get_organism {
 sub compute_ncbi {
     my ($this) = @_;
     my $term = '"'.$this->get_geneSymbol.'"[Gene Name] AND "'.$this->get_organism.'"[Organism]';
-    my $search= Bio::DB::EUtilities->new(-eutil => 'esearch',
+    my $factory = Bio::DB::EUtilities->new(-eutil => 'esearch',
 	    -db => 'gene',
 	    -term => $term,
 	    -email => 'mymail@foo.bar');
-    print "count ncbi: ".$search->get_count."\n";
-    my @ids = $search->get_ids;
-    #print "id ncbi: ".$ids[0]."\n";
-	$search->print_all;
-	$this->{NCBI_ID} = \@ids;
+    print "count ncbi: ".$factory->get_count."\n";
+    my @ids = $factory->get_ids;
+    print "id ncbi: ".$ids[0]."\n";
+	$factory->print_all;
+	$this->{NCBI_ID} = @ids;
 	#my $factory2 = Bio::DB::EUtilities->new(-eutil => 'egquery',
 	#    -email => 'mymail@foo.bar',
 	#    -term => $term);
 	#print "egquery:\n";
 	#$factory2->print_all;
 	print "esummary:\n";
-	my $summary = Bio::DB::EUtilities->new(-eutil => 'esummary',
-		-email => 'mymail@foo.bar',
+	$factory->reset_parameters(-eutil => 'esummary',
 		-db => 'gene',
-		-id => \@ids);#$search->get_ids);
-	while (my $ds = $search->next_DocSum) {
+	    -email => 'mymail@foo.bar',
+		-id => \@ids);#$factory->get_ids);
+	while (my $ds = $factory->next_DocSum) {
 		print "ID: ".$ds->get_id."\n";
 		while (my $item = $ds->next_Item('flattened')) {
 			printf("%-20s:%s\n", $item->get_name, $item->get_content) if ($item->get_content);
