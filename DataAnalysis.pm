@@ -101,11 +101,14 @@ sub get_organism {
 
 sub compute_ncbi {
     my ($this) = @_;
+	my $mail = 'mymail@foo.bar';
+	my $db = 'gene';
     my $term = '"'.$this->get_geneSymbol.'"[Gene Name] AND "'.$this->get_organism.'"[Organism]';
     my $factory = Bio::DB::EUtilities->new(-eutil => 'esearch',
-	    -db => 'gene',
+	    -db => $db,
 	    -term => $term,
-	    -email => 'mymail@foo.bar');
+		-usehistory => 'y',
+	    -email => $mail);
     print "count ncbi: ".$factory->get_count."\n";
     my @ids = $factory->get_ids;
     print "id ncbi: ".$ids[0]."\n";
@@ -116,17 +119,26 @@ sub compute_ncbi {
 	#    -term => $term);
 	#print "egquery:\n";
 	#$factory2->print_all;
-	print "esummary:\n";
-	$factory->reset_parameters(-eutil => 'esummary',
-		-db => 'gene',
-	    -email => 'mymail@foo.bar',
-		-id => \@ids);#$factory->get_ids);
-	while (my $ds = $factory->next_DocSum) {
-		print "ID: ".$ds->get_id."\n";
-		while (my $item = $ds->next_Item('flattened')) {
-			printf("%-20s:%s\n", $item->get_name, $item->get_content) if ($item->get_content);
-		}
-	}
+	#my $hist = $factory->next_History||die("elink failed");
+	#$factory->reset_parameters(-eutil => 'elink',
+	#	-history => $hist,
+	#	-db => 'protein',
+	#	-dbfrom => $db,
+	#	-cmd => 'neighbor_history');
+	#print "esummary:\n";
+	#$factory->reset_parameters(-eutil => 'esummary',
+	#	-db => $db,
+	#    -email => $mail,
+	#	-history => $hist);
+	#	-id => \@ids);#$factory->get_ids);
+	#while (my $ds = $factory->next_DocSum) {
+	#	print "ID: ".$ds->get_id."\n";
+	#	while (my $item = $ds->next_Item('flattened')) {
+	#		printf("%-20s:%s\n", $item->get_name, $item->get_content) if ($item->get_content);
+	#	}
+		#my ($item) = $ds->get_Items_by_name('GenommicInfoType');
+		#my %item_data p
+	#}
 }
 
 
