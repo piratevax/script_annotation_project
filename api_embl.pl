@@ -19,6 +19,7 @@ my @genes = @{$gene_adaptor->fetch_all_by_external_name($name)};
 print "*** $species\n";
 my $out = '<H1>Genes</H1>';
 my $out2 = '<H1>Transcript</H1>';
+my $out3 = '<H1>Protein</H1>';
 my $i = 0;
 foreach $rep (@genes) {
 	print "> ".$rep->display_id()."\t".$rep->start()."\t".$rep->end()."\n";
@@ -29,10 +30,15 @@ foreach $rep (@genes) {
 	foreach $rep2 (@transcripts) {
 	    print $rep2->display_id()."\t".$rep2->start()."\t".$rep2->end()."\n";
 		$out2 .= '<a href="http://www.ensembl.org/'.join('_', split(' ', $species)).'/Transcript/Summary?db='.$db.';g='.$rep->display_id().';r='.$rep->slice()->seq_region_name().':'.$rep2->start().'-'.$rep2->end().';t='.$rep2->display_id().'">'.$rep2->display_id().'</a><br>';
+			if ( $rep2->translation() ) {
+			print "### ".$rep2->translation()->stable_id()."\n";
+			$out3 .= '<a href="http://www.ensembl.org/'.join('_', split(' ', $species)).'/Transcript/ProteinSummary?db='.$db.';g='.$rep->display_id().';p='.$rep2->translation()->stable_id().';r='.$rep->slice()->seq_region_name().':'.$rep2->start().'-'.$rep2->end().';t='.$rep2->display_id().'">'.$rep2->translation()->stable_id().'</a><br>';
+		}
+		else { print "### pseudogene\n"; }
 	}
 }
 print "Total number : ".scalar(@genes)."\n";
 
 open(WEB, ">test.html") || die "test.html: $&";
-print WEB $out.$out2;
+print WEB $out.$out2.$out3;
 close(WEB);
