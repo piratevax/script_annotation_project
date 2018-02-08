@@ -2,43 +2,68 @@
 
 use Bio::SeqIO;
 use Bio::EnsEMBL::Registry;
+#use Bio::EnsEMBL::Compara;
+use Data::Dumper;
 
-my $r = "Bio::EnsEMBL::Registry";
+my $R = "Bio::EnsEMBL::Registry";
 my $s = "Bio::SeqIO";
 
-$r->load_registry_from_db(-host=>"ensembldb.ensembl.org",
+$R->load_registry_from_db(-host=>"ensembldb.ensembl.org",
 	-user=>"anonymous",
 	-verbose=>'0');
 my $species = "homo sapiens";
+my $generalSpecies = "Multi";
 my $name = "rad51";#"BRCC5";
-my $db = "core";
-my $gene_adaptor = $r->get_adaptor($species, $db, "gene");
+my @db = qw(core compara);
+my $gene_adaptor = $R->get_adaptor($species, $db[0], "gene");
 
 my @genes = @{$gene_adaptor->fetch_all_by_external_name($name)};
 
 print "*** $species\n";
-my $out = '<H1>Genes</H1>';
-my $out2 = '<H1>Transcript</H1>';
-my $out3 = '<H1>Protein</H1>';
-my $i = 0;
-foreach $rep (@genes) {
-	print "> ".$rep->display_id()."\t".$rep->start()."\t".$rep->end()."\n";
-	$out .= '<a href="http://www.ensembl.org/'.join('_', split(' ', $species)).'/Gene/Summary?db='.$db.';g='.$rep->display_id().';r='.$rep->slice()->seq_region_name().':'.$rep->start().'-'.$rep->end().'">'.$rep->display_id().'</a><br>';
-	print "*** ".$rep->slice()->seq_region_name()."\n";
-	my $y=0;
-	my @transcripts = @{$rep->get_all_Transcripts };
-	foreach $rep2 (@transcripts) {
-	    print $rep2->display_id()."\t".$rep2->start()."\t".$rep2->end()."\n";
-		$out2 .= '<a href="http://www.ensembl.org/'.join('_', split(' ', $species)).'/Transcript/Summary?db='.$db.';g='.$rep->display_id().';r='.$rep->slice()->seq_region_name().':'.$rep2->start().'-'.$rep2->end().';t='.$rep2->display_id().'">'.$rep2->display_id().'</a><br>';
-			if ( $rep2->translation() ) {
-			print "### ".$rep2->translation()->stable_id()."\n";
-			$out3 .= '<a href="http://www.ensembl.org/'.join('_', split(' ', $species)).'/Transcript/ProteinSummary?db='.$db.';g='.$rep->display_id().';p='.$rep2->translation()->stable_id().';r='.$rep->slice()->seq_region_name().':'.$rep2->start().'-'.$rep2->end().';t='.$rep2->display_id().'">'.$rep2->translation()->stable_id().'</a><br>';
+my $outG = '<h1>Genes</h1>';
+my $outT = '<h1>Transcript</h1>';
+my $outP = '<h1>Protein</h1>';
+my $outO = '<h1>Orthologuous</h1>';
+my $semiC = ';';
+my $dash = '-';
+my $colon = ':';
+my $rightA = '">';
+my $ouverture = '<a href="http://www.ensembl.org/';
+my $fermeture = '</a><br>';
+my $htmlSpecies = join('_', split(' ', $species));
+my $htmlG = '/Gene/Summary?';
+my $htmlT = '/Transcript/Summary?';
+my $htmlP = '/Transcript/SummaryProtein?';
+my $htmlO = '/Gene/Compara_Ortholog?';
+my $db = 'db=';
+my $g = 'g=';
+my $t = 't=';
+my $p = 'p=';
+my $r = 'r=';
+
+foreach $gene (@genes) {
+	print "> ".$gene->display_id()."\t".$gene->start()."\t".$gene->end()."\n";
+	#$outG .= '<a href="http://www.ensembl.org/'.join('_', split(' ', $species)).'/Gene/Summary?db='.$db.';g='.$gene->display_id().';r='.$gene->slice()->seq_region_name().':'.$gene->start().'-'.$gene->end().'">'.$gene->display_id().'</a><br>';
+	print "*** ".$gene->slice()->seq_region_name()."\n";
+	$outG .= $ouverture.$htmlSpecies.$htmlG.$db.$db[0].$semiC.$g.$gene->display_id().$semiC.$r.$gene->slice()->seq_region_name().$colon.$gene->start().$dash.$gene->end().$rightA.$gene->display_id().$fermeture;
+
+	my @transcripts = @{$gene->get_all_Transcripts };
+	foreach $transcript (@transcripts) {
+	    print $transcript->display_id()."\t".$transcript->start()."\t".$transcript->end()."\n";
+		#$outT .= '<a href="http://www.ensembl.org/'.join('_', split(' ', $species)).'/Transcript/Summary?db='.$db.';g='.$gene->display_id().';r='.$gene->slice()->seq_region_name().':'.$transcript->start().'-'.$transcript->end().';t='.$transcript->display_id().'">'.$transcript->display_id().'</a><br>';
+		$outT .= $ouverture.$htmlSpecies.$htmlT.$db.$db[0].$semiC.$g.$gene->display_id().$semiC.$r.$gene->slice()->seq_region_name().$colon.$transcript->start().$dash.$transcript->end().$semiC.$t.$transcript->display_id().$rightA.$transcript->display_id().$fermeture;
+		if ( $transcript->translation() ) {
+			print "### ".$transcript->translation()->stable_id()."\n";
+			#$outP .= '<a href="http://www.ensembl.org/'.join('_', split(' ', $species)).'/Transcript/ProteinSummary?db='.$db.';g='.$gene->display_id().';p='.$transcript->translation()->stable_id().';r='.$gene->slice()->seq_region_name().':'.$transcript->start().'-'.$transcript->end().';t='.$transcript->display_id().'">'.$transcript->translation()->stable_id().'</a><br>';
+			$outP .= $ouverture.$htmlSpecies.$htmlP.$db.$db[0].$semiC.$g.$gene->display_id().$semiC.$p.$transcript->translation()->stable_id().$semiC.$r.$gene->slice()->seq_region_name().$colon.$transcript->start().$dash.$transcript->end().$semiC.$t.$transcript->display_id().$rightA.$transcript->translation()->stable_id().$fermeture;
 		}
 		else { print "### pseudogene\n"; }
 	}
+
+	$outO .= $ouverture.$htmlSpecies.$htmlO.$db.$db[0].$semiC.$g.$gene->display_id().$semiC.$r.$gene->slice()->seq_region_name().$colon.$gene->start().$dash.$gene->end().$rightA."ortho".$fermeture;
 }
 print "Total number : ".scalar(@genes)."\n";
 
 open(WEB, ">test.html") || die "test.html: $&";
-print WEB $out.$out2.$out3;
+print WEB $outG.$outT.$outP.$outO;
 close(WEB);
