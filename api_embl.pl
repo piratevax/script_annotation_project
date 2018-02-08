@@ -24,6 +24,7 @@ my $outG = '<h1>Genes</h1>';
 my $outT = '<h1>Transcript</h1>';
 my $outP = '<h1>Protein</h1>';
 my $outO = '<h1>Orthologuous</h1>';
+my $outB = '<h1>Genome Browser</h1>';
 my $semiC = ';';
 my $dash = '-';
 my $colon = ':';
@@ -35,6 +36,7 @@ my $htmlG = '/Gene/Summary?';
 my $htmlT = '/Transcript/Summary?';
 my $htmlP = '/Transcript/SummaryProtein?';
 my $htmlO = '/Gene/Compara_Ortholog?';
+my $htmlB = '/Location/View?';
 my $db = 'db=';
 my $g = 'g=';
 my $t = 't=';
@@ -61,9 +63,11 @@ foreach $gene (@genes) {
 	}
 
 	$outO .= $ouverture.$htmlSpecies.$htmlO.$db.$db[0].$semiC.$g.$gene->display_id().$semiC.$r.$gene->slice()->seq_region_name().$colon.$gene->start().$dash.$gene->end().$rightA."ortho".$fermeture;
+
+	$outB .= $ouverture.$htmlSpecies.$htmlB.$db.$db[0].$semiC.$g.$gene->display_id().$semiC.$r.$gene->slice()->seq_region_name().$colon.$gene->start().$dash.$gene->end().$rightA."Brows".$fermeture;
 }
 print "Total number : ".scalar(@genes)."\n";
 
 open(WEB, ">test.html") || die "test.html: $&";
-print WEB $outG.$outT.$outP.$outO;
+print WEB $outG.$outT.$outP.$outO.$outB;
 close(WEB);
