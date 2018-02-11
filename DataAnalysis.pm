@@ -26,6 +26,7 @@ use Bio::Seq;
 use Bio::SeqIO;
 use Bio::DB::EUtilities;
 use Bio::DB::SoapEUtilities;
+use Bio::DB::RefSeq;
 
 =head1 FUNCTION DataAnalysis->new()
 
@@ -111,7 +112,7 @@ sub compute_ncbi {
     my @ids = $factory->get_ids;
     print "id ncbi: ".$ids[0]."\n";
 	$factory->print_all;
-	$this->{NCBI_IDS} = \@ids;
+	$this->{NCBI_IDS} = @ids;
 	#my $factory2 = Bio::DB::EUtilities->new(-eutil => 'egquery',
 	#    -email => 'mymail@foo.bar',
 	#    -term => $term);
@@ -168,7 +169,10 @@ sub compute_kegg {
 =cut
 
 sub compute_refSeq {
-
+	my ($this) = @_;
+	my $db = Bio::DB::RefSeq->new();
+	my $seq = $db->get_Seq_by_id($this->get_ncbi_ids); # RefSeq ID
+	print "accession is ", $seq->accession_number, "\n";
 }
 
 
