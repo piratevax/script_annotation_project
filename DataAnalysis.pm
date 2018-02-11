@@ -129,23 +129,23 @@ sub compute_ncbi {
 			printf("%-20s:%s\n", $item->get_name, $item->get_content) if ($item->get_content);
 		}
 	}
-	$factory = Bio::DB::SoapEUtilities->new();
-	my $result = $factory->esearch(-db => 'gene', -term => $term)->run;
-	print "### ".$result->count."\n";
-	print "### ".$result->ids."\n";
-	$factory = $factory->esummary( -db => 'gene',-id => 527031)->run(-auto_adapt=>1);
-	while ($factory->next_docsum) {
-		$_->print_all;
-	}
+	#$factory = Bio::DB::SoapEUtilities->new();
+	#my $result = $factory->esearch(-db => 'gene', -term => $term)->run;
+	#print "### ".$result->count."\n";
+	#print "### ".$result->ids."\n";
+	#$factory = $factory->esummary( -db => 'gene',-id => 527031)->run(-auto_adapt=>1);
+	#while ($factory->next_docsum) {
+	#	$_->print_all;
+	#}
 }
 
-=head1 FUNCTION get_ncbi_id
+=head1 FUNCTION get_ncbi_ids
 
-    get ncbi id
+    get ncbi ids
 
 =cut
 
-sub get_ncbi_id {
+sub get_ncbi_ids {
 	my ($this) = @_;
 	return $this->{NCBI_IDS};
 }
