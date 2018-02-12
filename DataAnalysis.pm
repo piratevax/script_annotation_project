@@ -25,8 +25,8 @@ use warnings;
 use Bio::Seq;
 use Bio::SeqIO;
 use Bio::DB::EUtilities;
-use Bio::DB::SoapEUtilities;
-use Bio::DB::RefSeq;
+#use Bio::DB::SoapEUtilities;
+#use Bio::DB::RefSeq;
 
 =head1 FUNCTION DataAnalysis->new()
 
@@ -111,33 +111,33 @@ sub compute_ncbi {
     print "count ncbi: ".$factory->get_count."\n";
     my @ids = $factory->get_ids;
     print "id ncbi: ".$ids[0]."\n";
-	$factory->print_all;
-	$this->{NCBI_IDS} = @ids;
-	#my $factory2 = Bio::DB::EUtilities->new(-eutil => 'egquery',
-	#    -email => 'mymail@foo.bar',
-	#    -term => $term);
-	#print "egquery:\n";
-	#$factory2->print_all;
-	#@ids = qw(828392 790 470338);
-	print "esummary:\n";
-	$factory->reset_parameters(-eutil => 'esummary',
-		-db => 'gene',
-	    -email => 'mymail@foo.bar',
-		-id => \@ids);#$factory->get_ids);
-	while (my $ds = $factory->next_DocSum) {
-		print "ID: ".$ds->get_id."\n";
-		while (my $item = $ds->next_Item('flattened')) {
-			printf("%-20s:%s\n", $item->get_name, $item->get_content) if ($item->get_content);
-		}
-	}
-	#$factory = Bio::DB::SoapEUtilities->new();
-	#my $result = $factory->esearch(-db => 'gene', -term => $term)->run;
-	#print "### ".$result->count."\n";
-	#print "### ".$result->ids."\n";
-	#$factory = $factory->esummary( -db => 'gene',-id => 527031)->run(-auto_adapt=>1);
-	#while ($factory->next_docsum) {
-	#	$_->print_all;
-	#}
+    $factory->print_all;
+    $this->{NCBI_IDS} = \@ids;
+    #my $factory2 = Bio::DB::EUtilities->new(-eutil => 'egquery',
+#	-email => 'mymail@foo.bar',
+#       -term => $term);
+    #print "egquery:\n";
+    #$factory2->print_all;
+    #@ids = qw(828392 790 470338);
+    #print "esummary:\n";
+    #$factory->reset_parameters(-eutil => 'esummary',
+    #    -db => 'gene',
+    #   -email => 'mymail@foo.bar',
+#	-id => \@ids);#$factory->get_ids);
+#   while (my $ds = $factory->next_DocSum) {
+#	print "ID: ".$ds->get_id."\n";
+#	while (my $item = $ds->next_Item('flattened')) {
+#	    printf("%-20s:%s\n", $item->get_name, $item->get_content) if ($item->get_content);
+#	}
+#   }
+#   $factory = Bio::DB::SoapEUtilities->new();
+#   my $result = $factory->esearch(-db => 'gene', -term => $term)->run;
+#   print "### ".$result->count."\n";
+#   print "### ".$result->ids."\n";
+#   $factory = $factory->esummary( -db => 'gene',-id => 527031)->run(-auto_adapt=>1);
+#   while ($factory->next_docsum) {
+#	$_->print_all;
+#   }
 }
 
 =head1 FUNCTION get_ncbi_ids
@@ -147,8 +147,8 @@ sub compute_ncbi {
 =cut
 
 sub get_ncbi_ids {
-	my ($this) = @_;
-	return $this->{NCBI_IDS};
+    my ($this) = @_;
+    return $this->{NCBI_IDS};
 }
 
 =head1 FUNCTION compute_kegg
@@ -169,10 +169,44 @@ sub compute_kegg {
 =cut
 
 sub compute_refSeq {
-	my ($this) = @_;
-	my $db = Bio::DB::RefSeq->new();
-	my $seq = $db->get_Seq_by_id($this->get_ncbi_ids); # RefSeq ID
-	print "accession is ", $seq->accession_number, "\n";
+    my ($this) = @_;
+    my @ids = ();
+    #my $db = Bio::DB::RefSeq->new();
+    #my $seq = $db->get_Seq_by_id($this->get_ncbi_ids); # RefSeq ID
+    #print "accession is ", $seq->accession_number, "\n";
+    my $factory = Bio::DB::EUtilities->new(-eutil => 'elink',
+	-email => 'mymail@foo.bar',
+	-db => 'nucleotide',
+	-dbfrom => 'gene',
+#	-cmd => 'llinks',
+#	-linkname => 'gene_nuccore_pos',
+	-id => '5888');#@{$this->get_ncbi_ids});
+    print "### ".${$this->get_ncbi_ids}[0]."\n";
+    while (my $ds = $factory->next_LinkSet) {
+	print "   Link name: ",$ds->get_link_name,"\n";
+	print "Protein IDs: ",join(',',$ds->get_submitted_ids),"\n";
+	print "    Nuc IDs: ",join(',',$ds->get_ids),"\n";
+	@ids = $ds->get_ids;
+#	while (my $linkout = $ds->next_UrlLink) {
+#	    print "\tProvider: ", $linkout->get_provider_name, "\n";
+#	    print "\tLink    : ", $linkout->get_url, "\n";
+#	}
+    }
+    print "### ".$ids[0]."\n";
+#    my $hist = $factory->next_History || die "Arghh!";
+    $factory->reset_parameters(-eutil => 'esummary',
+	-email => 'mymail@foo.bar',
+	-id => @ids,
+#	-history => $hist,
+	-db => 'nucleotide');
+#   for my $ds ( $factory->get_DocSums) {
+#       print "ID: ",$ds->get_id,"\n";
+#       while (my $item = $ds->next_Item('flattened'))  {
+#           printf("%-20s:%s\n", $item->get_name, $item->get_content) if $item->get_content;
+#       }
+#       print "\n";
+#   }
+    $factory->print_all;
 }
 
 
