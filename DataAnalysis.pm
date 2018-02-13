@@ -171,34 +171,38 @@ sub compute_kegg {
 sub compute_refSeq {
     my ($this) = @_;
     my @ids = ();
+	my $dbG = 'gene';
+	my $dbN = 'nucleotide';
+	my $dbP = 'protein';
     #my $db = Bio::DB::RefSeq->new();
     #my $seq = $db->get_Seq_by_id($this->get_ncbi_ids); # RefSeq ID
     #print "accession is ", $seq->accession_number, "\n";
     my $factory = Bio::DB::EUtilities->new(-eutil => 'elink',
 	-email => 'mymail@foo.bar',
-	-db => 'nucleotide',
-	-dbfrom => 'gene',
+	-db => $dbN,
+	-dbfrom => $dbG,
 #	-cmd => 'llinks',
 #	-linkname => 'gene_nuccore_pos',
+#	-linkname => 'gene_protein',
 	-id => '5888');#@{$this->get_ncbi_ids});
     print "### ".${$this->get_ncbi_ids}[0]."\n";
     while (my $ds = $factory->next_LinkSet) {
 	print "   Link name: ",$ds->get_link_name,"\n";
 	print "Protein IDs: ",join(',',$ds->get_submitted_ids),"\n";
 	print "    Nuc IDs: ",join(',',$ds->get_ids),"\n";
-	@ids = $ds->get_ids;
+	push(@ids, $ds->get_ids);
 #	while (my $linkout = $ds->next_UrlLink) {
 #	    print "\tProvider: ", $linkout->get_provider_name, "\n";
 #	    print "\tLink    : ", $linkout->get_url, "\n";
 #	}
     }
-    print "### ".$ids[0]."\n";
+    print "### ".$ids[0]." - ".$#ids."\n";
 #    my $hist = $factory->next_History || die "Arghh!";
     $factory->reset_parameters(-eutil => 'esummary',
 	-email => 'mymail@foo.bar',
 	-id => @ids,
 #	-history => $hist,
-	-db => 'nucleotide');
+	-db => $dbN);
 #   for my $ds ( $factory->get_DocSums) {
 #       print "ID: ",$ds->get_id,"\n";
 #       while (my $item = $ds->next_Item('flattened'))  {
