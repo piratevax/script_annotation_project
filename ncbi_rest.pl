@@ -5,7 +5,7 @@ use strict;
 use LWP::Simple;
 
 sub main {
-    my ($db, $dbGn, $dbGe, $dbNc, $dbNd, $dbP, $term, $docsums);#, $base, $url, $web, $key, $data, $output;
+    my ($db, $dbGn, $dbGe, $dbNc, $dbNd, $dbP, $dbB, $term, $docsums, $flag);#, $base, $url, $web, $key, $data, $output;
 
     $term = '(rad51[Gene Name]) AND homo sapiens[Organism]';
 
@@ -17,8 +17,9 @@ sub main {
     $dbNc = 'nuccore';
     $dbNd = 'nucleotide';
     $dbP = 'protein';
+    $dbB = 'biosystems';
 
-    $db = $dbNd;
+    $db = $dbB;
     $docsums = request($db, $term);
     print $docsums;
     if ($db eq 'gene') {
@@ -45,6 +46,21 @@ sub main {
 	    print $1."," if(/<Item Name="Caption" Type="String">(NG_.*?)<\/Item>/);
 	}
 	print "\n";
+    }
+    elsif($db eq 'biosystems'){
+	$flag = 0;
+	foreach (split("\n", $docsums)) {
+	    if(/<Item Name="externalid" Type="String">(hsa[^_].*?)<\/Item>/) {
+		print $1." : ";
+		$flag = 1;
+		next;
+	    }
+
+	    if ($flag == 1) {
+		print $1."\n" if(/<Item Name="biosystemname" Type="String">(.*?)<\/Item>/);
+		$flag = 0;
+	    }
+	}
     }
     else {print $docsums;}
 
