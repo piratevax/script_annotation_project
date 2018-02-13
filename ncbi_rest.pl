@@ -5,27 +5,43 @@ use strict;
 use LWP::Simple;
 
 sub main {
-    my ($dbG, $dbN, $dbP, $term, $docsums);#, $base, $url, $web, $key, $data, $output);
+    my ($db, $dbGn, $dbGe, $dbN, $dbP, $term, $docsums);#, $base, $url, $web, $key, $data, $output;
 
     $term = '(rad51[Gene Name]) AND homo sapiens[Organism]';
 
 # Download PubMed records that are indexed in MeSH for both asthma and 
 # leukotrienes and were also published in 2009.
 
-    $dbG = 'gene';
-    $dbN = 'nucleotide';
+    $dbGn = 'gene';
+    $dbGe = 'genome';
+    $dbN = 'nuccore';
     $dbP = 'protein';
 
-    $docsums = request($dbG, $term);
-    if ($dbG eq 'gene') {
+    $db = $dbGe;
+    $docsums = request($db, $term);
+    if ($db eq 'gene') {
 	foreach (split("\n", $docsums)) {
+#print $1."\n" if(/<DocumentSummary uid="(.*?)">/);
 	    print $1."\n" if(/<DocumentSummary uid="(.*?)">/);
-	    print $1."\n" if(/<NomenclatureName>(.*?)<\/NomenclatureName>/);
+	    print $1."\n" if(/<Description>(.*?)<\/Description>/);
         }
+    }
+    elsif($db eq 'protein'){
+	foreach (split("\n", $docsums)) {
+	    print $1."," if(/<Item Name="Caption" Type="String">(NP_.*?)<\/Item>/);
+	}
+	print "\n";
+    }
+    elsif($db eq 'nuccore'){
+	foreach (split("\n", $docsums)) {
+	    print $1."," if(/<Item Name="Caption" Type="String">(NM_.*?)<\/Item>/);
+	}
+	print "\n";
     }
     else {print $docsums;}
 
-    link_ncbi($dbG, $dbP, '5888');
+#link_ncbi($dbG, $dbP, '5888');
+
 }
 
 sub request {
