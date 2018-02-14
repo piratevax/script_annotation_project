@@ -1,0 +1,37 @@
+
+    my ($this) = @_;
+    my $term = '"'.$this->get_geneSymbol.'"[Gene Name] AND "'.$this->get_organism.'"[Organism]';
+    my $factory = Bio::DB::EUtilities->new(-eutil => 'esearch',
+	    -db => 'gene',
+	    -term => $term,
+	    -email => 'mymail@foo.bar');
+    print "count ncbi: ".$factory->get_count."\n";
+    my @ids = $factory->get_ids;
+    print "id ncbi: ".$ids[0]."\n";
+    $factory->print_all;
+    $this->{NCBI_IDS} = \@ids;
+    #my $factory2 = Bio::DB::EUtilities->new(-eutil => 'egquery',
+#	-email => 'mymail@foo.bar',
+#       -term => $term);
+    #print "egquery:\n";
+    #$factory2->print_all;
+    #@ids = qw(828392 790 470338);
+    #print "esummary:\n";
+    #$factory->reset_parameters(-eutil => 'esummary',
+    #    -db => 'gene',
+    #   -email => 'mymail@foo.bar',
+#	-id => \@ids);#$factory->get_ids);
+#   while (my $ds = $factory->next_DocSum) {
+#	print "ID: ".$ds->get_id."\n";
+#	while (my $item = $ds->next_Item('flattened')) {
+#	    printf("%-20s:%s\n", $item->get_name, $item->get_content) if ($item->get_content);
+#	}
+#   }
+#   $factory = Bio::DB::SoapEUtilities->new();
+#   my $result = $factory->esearch(-db => 'gene', -term => $term)->run;
+#   print "### ".$result->count."\n";
+#   print "### ".$result->ids."\n";
+#   $factory = $factory->esummary( -db => 'gene',-id => 527031)->run(-auto_adapt=>1);
+#   while ($factory->next_docsum) {
+#	$_->print_all;
+#   }
