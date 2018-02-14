@@ -22,9 +22,10 @@ package DataAnalysis;
 
 use strict;
 use warnings;
+use LWP::Simple;
 use Bio::Seq;
 use Bio::SeqIO;
-use Bio::DB::EUtilities;
+#use Bio::DB::EUtilities;
 #use Bio::DB::SoapEUtilities;
 #use Bio::DB::RefSeq;
 
@@ -95,6 +96,33 @@ sub get_organism {
     return $this->{ORGANISM};
 }
 
+=head1 FUCTION request_ncbi
+    
+    api request on NCBI
+
+=cut
+
+sub request_ncbi {
+    my ($db, $term) = @_;
+    my ($base, $url, $output, $web, $key);
+
+    #assemble the esearch URL
+    $base = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
+    $url = $base . "esearch.fcgi?db=$db&term=$term&usehistory=y";
+    #post the esearch URL
+    $output = get($url);
+    #parse WebEnv and QueryKey
+    $web = $1 if ($output =~ /<WebEnv>(\S+)<\/WebEnv>/);
+    $key = $1 if ($output =~ /<QueryKey>(\d+)<\/QueryKey>/);
+
+    ### include this code for ESearch-ESummary
+    #assemble the esummary URL
+    $url = $base . "esummary.fcgi?db=$db&query_key=$key&WebEnv=$web";
+
+    #post the esummary URL
+    return get($url);
+}
+
 =head1 FUNCTION compute_ncbi
 
     compute ncbi 
@@ -103,41 +131,57 @@ sub get_organism {
 
 sub compute_ncbi {
     my ($this) = @_;
-    my $term = '"'.$this->get_geneSymbol.'"[Gene Name] AND "'.$this->get_organism.'"[Organism]';
-    my $factory = Bio::DB::EUtilities->new(-eutil => 'esearch',
-	    -db => 'gene',
-	    -term => $term,
-	    -email => 'mymail@foo.bar');
-    print "count ncbi: ".$factory->get_count."\n";
-    my @ids = $factory->get_ids;
-    print "id ncbi: ".$ids[0]."\n";
-    $factory->print_all;
-    $this->{NCBI_IDS} = \@ids;
-    #my $factory2 = Bio::DB::EUtilities->new(-eutil => 'egquery',
-#	-email => 'mymail@foo.bar',
-#       -term => $term);
-    #print "egquery:\n";
-    #$factory2->print_all;
-    #@ids = qw(828392 790 470338);
-    #print "esummary:\n";
-    #$factory->reset_parameters(-eutil => 'esummary',
-    #    -db => 'gene',
-    #   -email => 'mymail@foo.bar',
-#	-id => \@ids);#$factory->get_ids);
-#   while (my $ds = $factory->next_DocSum) {
-#	print "ID: ".$ds->get_id."\n";
-#	while (my $item = $ds->next_Item('flattened')) {
-#	    printf("%-20s:%s\n", $item->get_name, $item->get_content) if ($item->get_content);
-#	}
-#   }
-#   $factory = Bio::DB::SoapEUtilities->new();
-#   my $result = $factory->esearch(-db => 'gene', -term => $term)->run;
-#   print "### ".$result->count."\n";
-#   print "### ".$result->ids."\n";
-#   $factory = $factory->esummary( -db => 'gene',-id => 527031)->run(-auto_adapt=>1);
-#   while ($factory->next_docsum) {
-#	$_->print_all;
-#   }
+    my ($term, $docsums, $tmp, $flag);
+    my (@dbs, @ids, @fullName, @nm, @np);
+    my %kegg;
+
+    $term = '"'.$this->get_geneSymbol.'"[Gene Name] AND "'.$this->get_organism.'"[Organism]';
+#$term = '(rad51[Gene Name]) AND homo sapiens[Organism]';
+
+    @dbs = qw(gene nuccore protein biosystems);
+    print "Computing on NCBI\n";
+    foreach my $db (@dbs) {
+	print "\tNCBI->".$db."\n";
+	$docsums = request_ncbi($db, $term);
+#print $docsums;
+	if ($db eq 'gene') {
+	    foreach (split("\n", $docsums)) {
+#print $1."\n" if(/<DocumentSummary uid="(.*?)">/);
+		push(@ids, $1) if(/<DocumentSummary uid="(.*?)">/);
+	        push(@fullName, $1) if(/<Description>(.*?)<\/Description>/);
+	    }
+	}
+	elsif($db eq 'protein'){
+	    foreach (split("\n", $docsums)) {
+		push(@np, $1) if(/<Item Name="Caption" Type="String">(NP_.*?)<\/Item>/);
+	    }
+	}
+	elsif($db eq 'nuccore'){
+	    foreach (split("\n", $docsums)) {
+		push(@nm, $1) if(/<Item Name="Caption" Type="String">(NM_.*?)<\/Item>/);
+	    }
+	}
+	elsif($db eq 'biosystems'){
+	    $flag = 0;
+	    foreach (split("\n", $docsums)) {
+		if(/<Item Name="externalid" Type="String">(hsa[^_].*?)<\/Item>/) {
+		    $tmp = $1;
+		    $flag = 1;
+		    next;
+		}
+		if ($flag == 1) {
+		    $kegg{$tmp} = $1 if(/<Item Name="biosystemname" Type="String">(.*?)<\/Item>/);
+		    $flag = 0;
+		    next;
+		}
+	    }
+	}
+    }
+    $this->{NCBI_ID} = \@ids;
+    $this->{FULL_NAME} = \@fullName;
+    $this->{NM} = \@nm;
+    $this->{NP} = \@np;
+    $this->{KEGG} = \%kegg;
 }
 
 =head1 FUNCTION get_ncbi_ids
