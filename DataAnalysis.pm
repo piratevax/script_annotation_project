@@ -135,6 +135,7 @@ sub compute_ncbi {
     my (@dbs, @ids, @fullName, @nm, @np);
     my %kegg;
 
+#
     $term = '"'.$this->get_geneSymbol.'"[Gene Name] AND "'.$this->get_organism.'"[Organism]';
 #$term = '(rad51[Gene Name]) AND homo sapiens[Organism]';
 
