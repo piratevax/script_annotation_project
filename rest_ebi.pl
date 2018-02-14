@@ -2,6 +2,8 @@
 
 use strict;
 use warnings;
+use JSON;
+use Data::Dumper;
  
 #curl -X GET --header 'Accept: text/csv' 'http://www.ebi.ac.uk/ebisearch/ws/rest/?query=gene_name:(pad4) AND species:(arabidopsis thaliana)'
 use HTTP::Tiny;
@@ -17,8 +19,6 @@ my $response = $http->get($server.$ext, {
 die "Failed!\n" unless $response->{success};
  
  
-use JSON;
-use Data::Dumper;
 if(length $response->{content}) {
     my $hash = decode_json($response->{content});
     local $Data::Dumper::Terse = 1;
