@@ -21,5 +21,4 @@ print $analysis->get_geneSymbol." ".$analysis->get_organism."\n" if($DEBUGG);
 $analysis->compute_ncbi;
 
 print Dumper($analysis->get_ncbi_ids)."\n" if ($DEBUGG);
-
-$analysis->compute_refSeq;
+print Dumper($analysis);
