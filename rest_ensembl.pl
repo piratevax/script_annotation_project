@@ -55,7 +55,9 @@ print ${$hash}{'start'}." - ".${$hash}{'end'};
 print "\n";
 print "nombre transcrit : ".(1+$#{${$hash}{'Transcript'}});
 print "\n";
-print ${${${$hash}{'Transcript'}}[0]}{'id'};
-print "\n";
-print ${${${${$hash}{'Transcript'}}[0]}{'Translation'}}{'id'};
-print "\n";
+foreach my $transcript (@{${$hash}{'Transcript'}}) {
+    print ${$transcript}{'id'};
+    print "\n";
+    print ${${$transcript}{'Translation'}}{'id'};
+    print "\n";
+}
