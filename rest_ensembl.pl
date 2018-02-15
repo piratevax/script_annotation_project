@@ -11,8 +11,8 @@ my ($http, $server, $response, $ext, $hash, $species, $symbol);
 $http = HTTP::Tiny->new();
 $species = 'homo sapiens';
 $symbol = 'rad51';
-$species = 'arabidopsis thaliana';
-$symbol = 'pad4';
+#$species = 'arabidopsis thaliana';
+#$symbol = 'pad4';
 
 $server = 'http://rest.ensembl.org';
 #$ext = "/lookup/symbol/Homo_sapiens/BRCA2?expand=1";
@@ -27,8 +27,8 @@ if ($response->{success}) {
 	$hash = decode_json($response->{content});
         local $Data::Dumper::Terse = 1;
 	local $Data::Dumper::Indent = 1;
-        print Dumper $hash;
-        print "\n";
+#print Dumper $hash;
+#print "\n";
     }
 
 }
@@ -45,7 +45,17 @@ else {
 	$hash = decode_json($response->{content});
         local $Data::Dumper::Terse = 1;
         local $Data::Dumper::Indent = 1;
-        print Dumper $hash;
-        print "\n";
+#print %{${$hash}{'Transcript'}[0]};
+#print "\n";
     }
 }
+print ${$hash}{'id'};
+print "\n";
+print ${$hash}{'start'}." - ".${$hash}{'end'};
+print "\n";
+print "nombre transcrit : ".(1+$#{${$hash}{'Transcript'}});
+print "\n";
+print ${${${$hash}{'Transcript'}}[0]}{'id'};
+print "\n";
+print ${${${${$hash}{'Transcript'}}[0]}{'Translation'}}{'id'};
+print "\n";
