@@ -23,6 +23,9 @@ package DataAnalysis;
 use strict;
 use warnings;
 use LWP::Simple;
+use HTTP::Tiny;
+use JSON;
+use Data::Dumper;
 use Bio::Seq;
 use Bio::SeqIO;
 #use Bio::DB::EUtilities;
@@ -287,8 +290,52 @@ sub compute_prosite {
 
 =cut
 
-sub compute_ensemble {
+sub compute_ensembl {
+    my ($this) = @_;
+    my ($http, $server, $response, $ext, $hash, $species, $symbol);
+    my (@transcripts, @proteins);
 
+    $http = HTTP::Tiny->new();
+    $species = $this->get_organism;
+    $symbol = $this->get_geneSymbol;
+
+    $server = 'http://rest.ensembl.org';
+    $ext = '/lookup/symbol/'.join('_', split(' ', $species)).'/'.$symbol.'?expand=1';
+    $response = $http->get($server.$ext, {
+	headers => { 'Content-type' => 'application/json' }
+    });
+ 
+    if ($response->{success}) { 
+	if(length $response->{content}) {
+	    $hash = decode_json($response->{content});
+            local $Data::Dumper::Terse = 1;
+	    local $Data::Dumper::Indent = 1;
+        }
+    }
+    else {
+	$server = 'http://rest.ensemblgenomes.org';
+        $ext = '/lookup/symbol/'.join('_', split(' ', $species)).'/'.$symbol.'?expand=1';
+	$response = $http->get($server.$ext, {
+	    headers => { 'Content-type' => 'application/json' }
+        });
+ 
+	if ($response->{success}) {
+	    if(length $response->{content}) {
+	        $hash = decode_json($response->{content});
+		local $Data::Dumper::Terse = 1;
+	        local $Data::Dumper::Indent = 1;
+	    }
+	}
+    }
+    $this->{ENS_ID} = ${$hash}{'id'};
+    $this->{ENS_START} = ${$hash}{'start'};
+    $this->{ENS_END} = ${$hash}{'end'};
+    foreach my $transcript (@{${$hash}{'Transcript'}}) {
+	push(@transcripts, ${$transcript}{'id'});
+	push(@proteins, ${${$transcript}{'Translation'}}{'id'});
+    }
+    $this->{ENS_TRANSCRIPT} = \@transcripts;
+    $this->{ENS_PROTEIN} = \@proteins;
 }
 
 =head1 FUNCTION compute_geneOntology
